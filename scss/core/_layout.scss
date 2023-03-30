@@ -1,0 +1,207 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: var(--body-width); // tùy
+  // font-size: 62.5%; // tuỳ thiết kế
+  font-size: var(--fz-body); // tùy
+  -webkit-font-smoothing: antialiased;
+  margin: auto;
+  background-color: var(--cl-body-bg);
+  scroll-behavior: smooth;
+  font-family: ol; // tuỳ thiết kế
+  color: #fff; // tuỳ thiết kế
+  @include custom-scrollbar();
+  .container {
+    width: 100%;
+    max-width: var(--container-width);
+    padding-right: var(--gap-container);
+    padding-left: var(--gap-container);
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
+  .container-fluid {
+    width: 100%;
+    max-width: var(--container-fluid-width);
+    padding-right: var(--gap-container-fluid);
+    padding-left: var(--gap-container-fluid);
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
+  @media (min-width: 2000px) {
+    max-width: unset;
+    .container {
+      max-width: 1900px;
+    }
+  }
+  @media (max-width: 1200px) {
+    .container {
+      max-width: 1200px;
+      padding: 0 32px;
+    }
+  }
+  @media (max-width: 992px) {
+    .container {
+      max-width: 960px;
+      padding: 0 26px;
+    }
+  }
+  @media (max-width: 768px) {
+    .container {
+      max-width: 720px;
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: 576px) {
+    .container {
+      max-width: 540px;
+      padding: 0 15px;
+    }
+  }
+
+  main {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+
+    .rotate-180 {
+      transform: rotate(180deg);
+    }
+    .--active {
+      display: block;
+    }
+  }
+  // .mainwrapper {
+  //   width: 100%;
+  //   margin: auto;
+  //   @include visible;
+  // }
+}
+footer {
+  &.displaynone {
+    display: none;
+  }
+}
+section {
+  width: 100%;
+  &.displaynone {
+    display: none;
+  }
+  &.pdt-100 {
+    padding-top: 100px;
+  }
+  &.pdb-100 {
+    padding-bottom: 100px;
+  }
+  &.pd-100 {
+    padding: 100px 0;
+  }
+  &.mr-100 {
+    margin: 100px 0;
+  }
+  &.mrt-100 {
+    margin-top: 100px 0;
+  }
+  &.mrb-100 {
+    margin-bottom: 100px 0;
+  }
+
+  @include xs {
+    &.pdt-100 {
+      padding-top: 60px;
+    }
+    &.pdb-100 {
+      padding-bottom: 60px;
+    }
+    &.pd-100 {
+      padding: 60px 0;
+    }
+    &.mr-100 {
+      margin: 60px 0;
+    }
+    &.mrt-100 {
+      margin-top: 60px 0;
+    }
+    &.mrb-100 {
+      margin-bottom: 60px 0;
+    }
+  }
+  @include md {
+    &.pdt-100 {
+      padding-top: 60px;
+    }
+    &.pdb-100 {
+      padding-bottom: 60px;
+    }
+    &.pd-100 {
+      padding: 60px 0;
+    }
+    &.mr-100 {
+      margin: 60px 0;
+    }
+    &.mrt-100 {
+      margin-top: 60px 0;
+    }
+    &.mrb-100 {
+      margin-bottom: 60px 0;
+    }
+  }
+}
+
+// CSS responsive
+// @include lg {
+//   // CSS responsive large desktop
+// }
+// @include md {
+//   // CSS responsive desktop
+// }
+// @include sm {
+//   // CSS responsive tablet
+// }
+// @include xs {
+//   // CSS responsive mobile
+// }
+// @include xxs {
+//   //CSS responsive small mobile
+// }
+
+// @media (max-width: 576px) {
+//   .container {
+//     max-width: 540px;
+//   }
+// }
+// @media (max-width: 768px) {
+//   .container {
+//     max-width: 720px;
+//   }
+// }
+// @media (max-width: 992px) {
+//   .container {
+//     max-width: 960px;
+//   }
+// }
+// @media (max-width: 1200px) {
+//   .container {
+//     max-width: var(--container-width);
+
+//   }
+// }

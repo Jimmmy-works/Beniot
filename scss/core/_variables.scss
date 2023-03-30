@@ -1,0 +1,49 @@
+// media queries breakpoins
+$xxs-min: 568px;
+$xs-min: 768px;
+$sm-min: 992px;
+$md-min: 1200px;
+$lg-min: 1600px;
+
+$xxs-max: $xxs-min - 1;
+$xs-max: ($xs-min - 1);
+$sm-max: $sm-min - 1;
+$md-max: $md-min - 1;
+$lg-max: $lg-min - 1;
+
+$cl-primary: #bea67c;
+
+:root {
+  --container-fluid-width: 1440px;
+  --gap-container-fluid: 32px;
+  --container-width: 1200px;
+  --gap-container: 0;
+  --body-width: 2560px;
+  --header-height: 100px;
+  // color - bg color
+  --cl-header: #0e1317;
+  --cl-body-bg: #0e1317;
+  --cl-body: #fff;
+  --cl-bg: #040404;
+  --cl-primary: #b68c2d;
+  --cl-white: #fff;
+  --cl-black: #000;
+  --cl-black-h1: #090c0f;
+  --cl-black-h2: #151b20;
+  --cl-btn: #1c2329;
+  // font-size
+  --fz-body: 16px;
+  --fz-h1: 128px;
+  --fz-h2: 40px;
+  --fz-h3: 24px;
+  --fz-h4: 20px;
+  --fz-h5: 16px;
+  --fz-h6: 14px;
+  --fz-90: 90px;
+  --time: 0.4s;
+}
+@keyframes circleLogo {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
