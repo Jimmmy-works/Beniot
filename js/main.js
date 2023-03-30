@@ -24,24 +24,27 @@ handleMenu();
 // Handle Hamberger -> OK
 const nav = document.querySelector(".header .nav ");
 const hamberger = document.querySelector(".header .btn__menu");
+function hideNav() {
+  hamberger.classList.remove("active");
+  nav.classList.remove("active");
+}
 function handleHamberger() {
   hamberger.addEventListener("click", function (event) {
     event.stopPropagation();
     hamberger.classList.toggle("active");
     nav.classList.toggle("active");
+   
   });
   // Hide Nav khi W = 992px
-  function hideNav() {
-    hamberger.classList.remove("active");
-    nav.classList.remove("active");
-  }
+  
   // Resize Window
   window.addEventListener("resize", function (event) {
     event.stopPropagation();
     let widthWindow = window.innerWidth;
     if (widthWindow >= 1200) {
-      nav.classList.remove("active");
-      hamberger.classList.remove("active");
+      // nav.classList.remove("active");
+      // hamberger.classList.remove("active");
+      hideNav()
     }
   });
 }
@@ -51,9 +54,8 @@ function removeHamberger() {
     nav.classList.remove("active");
   });
 }
-removeHamberger();
-handleHamberger();
-
+ removeHamberger();
+ handleHamberger();
 // // Handle  Language -> OK
 const language = document.querySelector(".header .language");
 const languageItem = document.querySelectorAll(
@@ -669,7 +671,7 @@ function scrollHiddenNav() {
   navbar = document.querySelector(".header");
   window.addEventListener("scroll", function () {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop >= lastScrollTop || scrollTop < 100) {
+    if (scrollTop >= lastScrollTop || scrollTop <= 100) {
       navbar.style.visibility = "visible";
       navbar.style.opacity = "1";
     } else {
@@ -680,3 +682,11 @@ function scrollHiddenNav() {
   });
 }
 scrollHiddenNav();
+
+function loading(){
+let loading = document.querySelector('.loading')
+// setTimeout(() => {
+  loading.classList.add('active');
+// }, 500);
+}
+loading();

@@ -1,264 +1,250 @@
 .header {
-  height: var(--header-height);
-  width: 100%;
-  z-index: 100;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--cl-header);
-  @include transition;
-  opacity: 1;
-  visibility: visible;
-  .container {
-    height: 100%;
-    width: 100%;
-    @include mid;
-    justify-content: space-between;
-    max-width: 1440px;
-    padding-left: 60px;
-    padding-right: 32px;
-  }
-  .btn__menu {
-    display: none;
-    border-radius: 5px;
-    &.active {
-      // background-color: var(--cl-primary);
-      @include transition;
-      .btn__menu-item {
-        left: 20%;
-        &:first-child {
-          transform: rotate(45deg);
-          top: 17%;
-          background-color: var(--cl-white);
-        }
-        &:nth-child(2) {
-          width: 0%;
-          opacity: 0;
-          background-color: var(--cl-white);
-        }
-        &:last-child {
-          transform: rotate(-45deg);
-          top: 80%;
-          background-color: var(--cl-white);
-        }
-      }
-    }
-  }
-  .logo {
-    display: flex;
-    height: 43.62px;
-    width: 100%;
-    max-width: 180px;
+    height: var(--header-height);
+    width: 100vw;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cl-header);
+    @include transition;
     opacity: 1;
     visibility: visible;
-    @include transition(0.8s);
-    & img {
-      object-fit: contain;
-    }
-  }
-  .menu {
-    height: 100%;
-    gap: 24px;
-    @include mid;
-    @include mid(false);
-    &__item {
-      height: 100%;
-      @include transition;
-      cursor: pointer;
-      position: relative;
-      transition: transform 0.4s;
-
-      a {
-        display: block;
-        @include text(ol, var(--fz-h6), 20px, var(--cl-white), none, uppercase);
+    .container {
         height: 100%;
+        width: 100%;
         @include mid;
-        @include transition;
-        &:hover {
-          color: var(--cl-primary);
-          &::before {
-            transition: transform 0.4s;
-            @include transform(scaleX(1));
-            @include transform-origin(left);
-          }
-        }
-        &.active {
-          color: var(--cl-primary);
-          &::before {
-            transition: transform 0.4s;
-            @include transform(scaleX(1));
-            @include transform-origin(left);
-          }
-        }
-        &::before {
-          content: "";
-          width: 100%;
-          height: 1px;
-          background-color: var(--cl-primary);
-          position: absolute;
-          bottom: 33px;
-          left: 0;
-          transition: transform 0.4s;
-          @include transform(scaleX(0));
-          @include transform-origin(right);
-        }
-      }
-      &:first-child {
-        padding-left: initial;
-      }
-      &:last-child {
-        padding-right: initial;
-      }
+        justify-content: space-between;
+        max-width: 1440px;
+        padding-left: 60px;
+        padding-right: 32px;
     }
-  }
-  .language {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    position: absolute;
-    right: 188px;
-    padding: 20px;
-    @include transition;
-    &.active {
-      @include transition;
-      .language__list {
+    .btn__menu {
+        display: none;
+        border-radius: 5px;
+        z-index: 10000000;
+        &.active {
+            // background-color: var(--cl-primary);
+            @include transition(0.25s);
+            .btn__menu-item {
+                left: 20%;
+                &:first-child {
+                    transform: rotate(45deg);
+                    top: 17%;
+                    background-color: var(--cl-white);
+                }
+                &:nth-child(2) {
+                    width: 0%;
+                    opacity: 0;
+                    background-color: var(--cl-white);
+                }
+                &:last-child {
+                    transform: rotate(-45deg);
+                    top: 80%;
+                    background-color: var(--cl-white);
+                }
+            }
+        }
+    }
+    .logo {
+        display: flex;
+        height: 43.62px;
+        width: 100%;
+        max-width: 180px;
         opacity: 1;
         visibility: visible;
-        @include transition;
-        &-item {
+        & img {
+            object-fit: contain;
         }
-      }
     }
-    &__img {
-      margin-left: 5px;
-      & img {
-        object-fit: contain;
-      }
-    }
-    &__current {
-      @include text(ol, var(--fz-h6), 20px, var(--cl-white), none, uppercase);
-    }
-    &__list {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      position: absolute;
-      bottom: -80%;
-      right: 7px;
-      text-align: center;
-      opacity: 0;
-      visibility: hidden;
-      @include transition;
-      &-item {
-        width: 100%;
+    .menu {
         height: 100%;
-        background-color: rgba($color: #fff, $alpha: 0.5);
+        gap: 24px;
         @include mid;
-        @include transition;
-        @include text(ol, var(--fz-h6), 20px, var(--cl-white), none, uppercase);
-        a {
-          display: block;
-          @include text(
-            ol,
-            var(--fz-h6),
-            20px,
-            var(--cl-white),
-            none,
-            uppercase
-          );
-          @include transition;
-        }
-        &:hover {
-          background-color: var(--cl-primary);
-          & a {
-            color: var(--cl-white);
-          }
-        }
-      }
-    }
-  }
+        @include mid(false);
+        &__item {
+            height: 100%;
 
-  @include md {
-    .container {
-    }
-    .logo {
-      @include mid(false);
-    }
-    .btn__menu {
-      display: block;
-    }
-    .menu {
-      display: none;
-    }
-  }
-  @include sm {
-    .menu {
-      display: none;
-    }
-  }
-  @include xs {
-    .menu {
-      display: none;
-    }
-    .btn__reverse {
-      display: none;
+            @include transition;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.4s;
+            a {
+                display: block;
+                @include text(ol, var(--fz-h6), 20px, var(--cl-white), none, uppercase);
+                height: 100%;
+                @include mid;
+                @include transition;
+                &:hover {
+                    color: var(--cl-primary);
+                    &::before {
+                        transition: transform 0.4s;
+                        @include transform(scaleX(1));
+                        @include transform-origin(left);
+                    }
+                }
+                &.active {
+                    color: var(--cl-primary);
+                    &::before {
+                        transition: transform 0.4s;
+                        @include transform(scaleX(1));
+                        @include transform-origin(left);
+                    }
+                }
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--cl-primary);
+                    position: absolute;
+                    bottom: 33px;
+                    left: 0;
+                    transition: transform 0.4s;
+                    @include transform(scaleX(0));
+                    @include transform-origin(right);
+                }
+            }
+            &:first-child {
+                padding-left: initial;
+            }
+            &:last-child {
+                padding-right: initial;
+            }
+        }
     }
     .language {
-      position: initial;
-      &__list {
-        right: 5%;
-        width: 60px;
-        &-item {
-          @include text(
-            ol,
-            var(--fz-h6),
-            30px,
-            var(--cl-white),
-            none,
-            uppercase
-          );
-          a {
-            font-size: var(--fz-h5);
-            line-height: 30px;
-          }
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: absolute;
+        right: 188px;
+        padding: 20px;
+        @include transition;
+        &.active {
+            @include transition;
+            .language__list {
+                opacity: 1;
+                visibility: visible;
+                @include transition;
+                &-item {
+                }
+            }
         }
-      }
-    }
-  }
-  @include xxs {
-    height: 60px;
-    .container {
-      padding-left: 30px;
-      padding-right: 15px;
-    }
-    .btn__menu {
-      max-height: 30px;
-      max-width: 30px;
-      &-item {
-        max-width: 25px;
-      }
-      &.active {
-        .btn__menu-item {
-          left: 20%;
-          &:last-child {
-            top: 76%;
-          }
+        &__img {
+            margin-left: 5px;
+            & img {
+                object-fit: contain;
+            }
         }
-      }
+        &__current {
+            @include text(ol, var(--fz-h6), 20px, var(--cl-white), none, uppercase);
+        }
+        &__list {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            bottom: -80%;
+            right: 7px;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            @include transition;
+            &-item {
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: #fff, $alpha: 0.5);
+                @include mid;
+                @include transition;
+                @include text(ol, var(--fz-h6), 20px, var(--cl-white), none, uppercase);
+                a {
+                    display: block;
+                    @include text(ol, var(--fz-h6), 20px, var(--cl-white), none, uppercase);
+                    @include transition;
+                }
+                &:hover {
+                    background-color: var(--cl-primary);
+                    & a {
+                        color: var(--cl-white);
+                    }
+                }
+            }
+        }
     }
 
-    .menu {
-      display: none;
+    @include md {
+        .container {
+        }
+        .logo {
+            @include mid(false);
+        }
+        .btn__menu {
+            display: block;
+        }
+        .menu {
+            display: none;
+        }
     }
-    .logo {
-      max-width: 130px;
-      @include mid(false);
+    @include sm {
+        .menu {
+            display: none;
+        }
     }
-  }
+    @include xs {
+        .menu {
+            display: none;
+        }
+        .btn__reverse {
+            display: none;
+        }
+        .language {
+            position: initial;
+            &__list {
+                right: 5%;
+                width: 60px;
+                &-item {
+                    @include text(ol, var(--fz-h6), 30px, var(--cl-white), none, uppercase);
+                    a {
+                        font-size: var(--fz-h5);
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    @include xxs {
+        height: 60px;
+        .container {
+            padding-left: 30px;
+            padding-right: 15px;
+        }
+        .btn__menu {
+            max-height: 30px;
+            max-width: 30px;
+            &-item {
+                max-width: 25px;
+            }
+            &.active {
+                .btn__menu-item {
+                    left: 20%;
+                    &:last-child {
+                        top: 76%;
+                    }
+                }
+            }
+        }
+
+        .menu {
+            display: none;
+        }
+        .logo {
+            max-width: 130px;
+            @include mid(false);
+        }
+    }
 }

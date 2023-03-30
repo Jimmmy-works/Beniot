@@ -1,86 +1,86 @@
 .nav {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  z-index: 1000;
-  left: 50%;
-  transform: translate(-50%, 100%);
-  top: calc(var(--header-height) - 1px);
-  background-color: var(--cl-black-h2);
-  @include transition(0.4s linear);
-  visibility: hidden;
-  opacity: 0;
-  &.active {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-  &__inner {
+    height: 100vh;
     width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-    ul {
-      height: 100%;
-      width: 100%;
-      @include mid;
-      flex-direction: column;
-      justify-content: flex-start;
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      li {
-        height: 7%;
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    // transform: translate(-100%, 0);
+    transform: translate(-50%, 100%);
+    top: calc(var(--header-height) - 1px);
+    background-color: var(--cl-black-h2);
+    @include transition(0.3s ease);
+    &.active {
+        transform: translate(-50%, 0);
+    }
+    &.remove {
+        transform: translate(-50%, -120%);
+    }
+    &__inner {
         width: 100%;
-        @include mid;
-        cursor: pointer;
-        &:hover {
-          a {
-            color: var(--cl-primary);
-          }
-        }
-        a {
-          height: 100%;
-          width: 100%;
-          @include mid;
-          margin: 0 6px;
-          @include text(ol, var(--fz-h4), 40px, var(--cl-white), none, none);
-          @include transition;
-        }
-        .linemain {
-          span {
-            &::after {
-              display: none;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        ul {
+            height: 100%;
+            width: 100%;
+            @include mid;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            li {
+                height: 7%;
+                width: 100%;
+                @include mid;
+                cursor: pointer;
+                &:hover {
+                    a {
+                        color: var(--cl-primary);
+                    }
+                }
+                a {
+                    height: 100%;
+                    width: 100%;
+                    @include mid;
+                    margin: 0 6px;
+                    @include text(ol, var(--fz-h4), 40px, var(--cl-white), none, none);
+                    @include transition;
+                }
+                .linemain {
+                    span {
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-    }
-    .btn__reverse {
-      margin-top: 20px;
-      max-height: 65px;
-      max-width: 180px;
-      font-size: 20px;
-    }
-  }
-  @include xs {
-    &__inner {
-      .btn__reverse {
-        display: block;
-      }
-    }
-  }
-  @include xxs {
-    --header-height: 60px;
-    &__inner {
-      ul {
-        li {
-          a {
-            font-size: 16px;
-          }
+        .btn__reverse {
+            margin-top: 20px;
+            max-height: 65px;
+            max-width: 180px;
+            font-size: 20px;
         }
-      }
     }
-  }
+    @include xs {
+        &__inner {
+            .btn__reverse {
+                display: block;
+            }
+        }
+    }
+    @include xxs {
+        --header-height: 60px;
+        &__inner {
+            ul {
+                li {
+                    a {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
 }
