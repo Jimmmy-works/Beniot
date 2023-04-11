@@ -1,51 +1,53 @@
 .nav {
     height: 100vh;
-    width: 100%;
-    position: absolute;
-    z-index: 1000;
-    left: 50%;
-    // transform: translate(-100%, 0);
-    transform: translate(-50%, 100%);
-    top: calc(var(--header-height) - 1px);
-    background-color: var(--cl-black-h2);
-    @include transition(0.3s ease);
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    @include transform(translateX(-120%));
+    background-color: var(--f-spinner-color-2);
+    opacity: 0;
+    visibility: hidden;
+    @include transition;
     &.active {
-        transform: translate(-50%, 0);
+        @include transform(translateX(0%));
+        opacity: 1;
+        visibility: visible;
+        @include transition;
     }
-    &.remove {
-        transform: translate(-50%, -120%);
-    }
+
     &__inner {
-        width: 100%;
+        width: 100vw;
         height: 100%;
-        margin: 0 auto;
         position: relative;
-        ul {
+        @include transition;
+        float: left;
+        &-list {
             height: 100%;
             width: 100%;
-            @include mid;
-            flex-direction: column;
-            justify-content: flex-start;
             position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            li {
-                height: 7%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 20px 0;
+            .item {
                 width: 100%;
                 @include mid;
                 cursor: pointer;
-                &:hover {
-                    a {
-                        color: var(--cl-primary);
+                &:not(:nth-child(5)) {
+                    &:hover {
+                        a {
+                            color: var(--cl-primary);
+                        }
                     }
                 }
                 a {
-                    height: 100%;
+                    --fz-h5: 1.8rem;
                     width: 100%;
+                    padding: 1px 40px;
                     @include mid;
-                    margin: 0 6px;
-                    @include text(ol, var(--fz-h4), 40px, var(--cl-white), none, none);
+                    justify-content: flex-start;
+                    @include text(orr, var(--fz-h5), 40px, var(--cl-white), none, none);
                     @include transition;
                 }
                 .linemain {
@@ -55,30 +57,97 @@
                         }
                     }
                 }
+                .img {
+                    margin-left: 14px;
+                    @include transition;
+                    transform: rotate(-90deg);
+                    svg {
+                        path {
+                            @include transition;
+                        }
+                    }
+                }
             }
         }
         .btn__reverse {
             margin-top: 20px;
+            margin-left: 40px;
             max-height: 65px;
             max-width: 180px;
-            font-size: 20px;
+            font-size: 16px;
+            @include visible(0);
+            @include transition;
+        }
+        .submenunav {
+            // @include visible(0);
+            @include transition;
+            flex-direction: column;
+            a {
+                &:hover {
+                    color: var(--cl-primary);
+                }
+            }
+            &.active {
+                @include transition;
+                .img {
+                    transform: rotate(0);
+                    svg {
+                        path {
+                            stroke: var(--cl-primary);
+                        }
+                    }
+                }
+                .menunavlist {
+                    height: 132px;
+                }
+            }
+            .menunavlist {
+                padding: 0 40px;
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                @include transition;
+                &__item {
+                    a {
+                        --fz-h6: 1.6rem;
+                        padding: 7px 15px;
+                        display: block;
+                        text-align: left;
+                        @include text(orr, var(--fz-h6), var(--lh-h6), var(--cl-white), none, none);
+                        &:hover {
+                            color: var(--cl-primary);
+                        }
+                    }
+                }
+            }
         }
     }
     @include xs {
         &__inner {
             .btn__reverse {
-                display: block;
+                @include visible(1);
             }
         }
     }
     @include xxs {
         --header-height: 60px;
         &__inner {
+            &-list {
+                .item {
+                    a {
+                        --fz-h5: 1.4rem;
+                    }
+                }
+            }
+            width: 100vw;
             ul {
                 li {
                     a {
-                        font-size: 16px;
+                        font-size: 14px;
                     }
+                }
+                .btn__reverse {
+                    font-size: 14px;
                 }
             }
         }

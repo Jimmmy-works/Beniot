@@ -4,24 +4,12 @@
 @import './core/mixins';
 @import './core/libs/fancyBox';
 @import './core/libs/flickity';
+
 // main, component, element, loading
 @import './core/layout';
 @import './core/components';
 @import './core/elements';
 @import './core/loading';
-// Pages
-@import './pages/home';
-@import './pages/about';
-@import './pages/service';
-@import './pages/event';
-@import './pages/offer';
-@import './pages/placename';
-@import './pages/ourblog';
-@import './pages/contact';
-@import './pages/event-info-one';
-@import './pages/freshproduct';
-@import './pages/placename-page-one';
-@import './pages/offer-page-one.scss';
 
 //  Nav , header, footer
 @import './core/header';
@@ -29,6 +17,17 @@
 @import './core/footer';
 @import './core/sidebar';
 
-//SCSS libs
-// @import "./core/libs/fancyBox";
-// @import "./core/libs/flickity";
+// Pages
+@import './pages/home';
+@import './pages/about';
+@import './pages/service';
+@import './pages/event';
+@import './pages/menu';
+@import './pages/destination';
+@import './pages/libs';
+@import './pages/contact';
+@import './pages/event-detail';
+@import './pages/menu-detail-dessert';
+@import './pages/menu-detail-eu';
+@import './pages/destination-detail';
+@import './pages/freshproduct';

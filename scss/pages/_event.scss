@@ -1,367 +1,109 @@
 .main__event {
-  .hero {
-    height: 100vh;
-    //   max-height: 650px;
-    width: 100vw;
-    position: relative;
-
-    &__img {
-      width: 100%;
-      height: 100%;
-      & img {
+    .hero {
+        height: 100vh;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    @media screen and (max-width: 1024px) {
-      height: 50vh;
-      margin-top: var(--header-height);
-    }
-    @include xs {
-      --header-height: 60px;
-      & .textbox__archon {
-        flex-direction: column;
-        justify-content: center;
-        &-heading {
-          padding-left: 0;
-        }
-        &-click {
-          padding-right: 0;
-          margin-top: 30px;
-          & .prevHome {
-          }
-          & .nextService {
-          }
-        }
-      }
-    }
-    @include xxs {
-      --header-height: 60px;
-    }
-  }
-  .mymenu {
-    margin-top: 120px;
-    margin-bottom: 120px;
-    .flexauto {
-      &__wrap {
-        flex-wrap: wrap;
-        &-item {
-          margin-top: 12px;
-          margin-bottom: 12px;
-        }
-      }
-    }
-    .btn__main {
-      margin: 0 auto;
-      margin-top: 65px;
-    }
-    @media screen and (max-width: 1040px) {
-      .flexauto {
-        --item: 2;
-        &__wrap {
-          &-item {
-            width: calc(100% / var(--item) - 24px);
-          }
-        }
-      }
-    }
-    @include sm {
-      .flexauto {
-        &__wrap {
-          &-item {
-            width: calc(100% / var(--item) - 24px);
-            .content {
-              &__time {
-                &-date,
-                &-checkin {
-                  font-size: 24px;
-                }
-              }
-              &__text {
-                font-size: 24px;
-              }
-            }
-          }
-        }
-      }
-    }
-    @media screen and (max-width: 768px) {
-      margin-bottom: 60px;
-      margin-top: 60px;
-      .flexauto {
-        &__wrap {
-          &-item {
-            width: calc(100% / var(--item) - 24px);
-            .content {
-              &__time {
-                &-date,
-                &-checkin {
-                  font-size: 21px;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    @include xxs {
-      .flexauto {
-        --item: 1;
-        &__wrap {
-          &-item {
-            width: calc(100% / var(--item) - 24px);
-            margin-top: 24px;
-            margin-bottom: 24px;
-            .content {
-              padding: 27px 32px 53px 32px;
-              &__time {
-                &-date,
-                &-checkin {
-                  font-size: 24px;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-.footer {
-  background-color: var(--cl-black-h1);
-  display: flex;
-  flex-direction: column;
-  .container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 100px;
-    margin-top: 104px;
-  }
-  &__contact {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 100%;
-    max-width: 252px;
-    &-heading {
-      padding-bottom: 24px;
-      @include text(ol, var(--fz-h3), 40px, var(--cl-white), none, none);
-    }
-    &-location,
-    &-phone,
-    &-email {
-      display: block;
-      text-decoration: none;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      & svg {
-        height: 100%;
-        width: 100%;
-        max-width: 40px;
-        max-height: 40px;
-        margin-right: 16px;
-      }
-      & .text {
-        @include text(mr, var(--fz-h5), 30px, var(--cl-white), none, none);
         position: relative;
-        @include transition;
-        &::before {
-          content: "";
-          width: 100%;
-          height: 1.5px;
-          position: absolute;
-          bottom: 2px;
-          left: 0;
-          background-color: var(--cl-primary);
-          opacity: 0;
-          visibility: hidden;
-          @include transition;
+        margin-top: var(--header-height);
+        max-height: 500px;
+        background: url(../img/event-banner.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+        .container {
+            height: 100%;
         }
-      }
-      &:hover {
-        & .text {
-          color: var(--cl-primary);
-
-          &::before {
-            opacity: 1;
-            visibility: visible;
-          }
+        @media screen and (max-width: 1024px) {
+            height: 50vh;
         }
-      }
-    }
-    &-phone {
-      padding-top: 16px;
-    }
-    &-email {
-      padding-left: 9px;
-      padding-top: 16px;
-      & svg {
-        max-width: 24px;
-        margin-right: 24px;
-      }
-    }
-  }
-  &__connect {
-    flex: 1;
-    @include mid;
-    flex-direction: column;
-    &-logo {
-    }
-    &-heading {
-      width: 100%;
-      max-width: 391px;
-      @include text(ci, var(--fz-h3), 40px, var(--cl-white), none, none);
-      text-align: center;
-      padding-top: 34.5px;
-    }
-    &-social {
-      @include mid;
-      padding-top: 31px;
-      & .tw,
-      & .fb,
-      & .linkend,
-      & .ins,
-      & .youtube {
-        display: block;
-        padding: 0 24px;
-        & svg {
-          transform: scale(1);
-          @include transition;
-          & path {
-            @include transition;
-          }
-        }
-        &:hover {
-          & svg {
-            transform: scale(1.08);
-            & path {
-              fill: var(--cl-primary);
+        @include xs {
+            .textbox__archon {
+                flex-direction: column;
+                justify-content: center;
+                &-heading {
+                    padding-left: 0;
+                }
+                &-click {
+                    padding-right: 0;
+                    margin-top: 30px;
+                    & .prevHome {
+                    }
+                    & .nextService {
+                    }
+                }
             }
-          }
         }
-      }
-      & .linkend,
-      & .tw,
-      & .youtube {
-        padding: unset;
-      }
+        @include xxs {
+            --header-height: 60px;
+        }
     }
-  }
-  &__open {
-    text-align: right;
-    &-heading {
-      padding-bottom: 24px;
-      @include text(ol, var(--fz-h3), 40px, var(--cl-white), none, none);
+    .mymenu {
+        .flexauto {
+            &__wrap {
+                flex-wrap: wrap;
+            }
+        }
+        .btn__main {
+            margin: 0 auto;
+            margin-top: 65px;
+        }
+        @include sm {
+            .flexauto {
+                &__wrap {
+                    &-item {
+                        margin-right: unset;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        @include xs {
+            .flexauto {
+                --fz-h3: 1.8rem;
+                --item: 2;
+                &__wrap {
+                    &-item {
+                        .content {
+                            padding-left: 24px;
+                            padding-right: 24px;
+                        }
+                    }
+                }
+            }
+        }
     }
-    &-desc {
-      padding-bottom: 16px;
-      @include text(mr, var(--fz-h5), 30px, var(--cl-white), none, none);
-      &:last-child {
-        padding-bottom: unset;
-      }
-      & span {
-        @include text(mr, var(--fz-h5), 30px, var(--cl-primary), none, none);
-      }
-    }
-  }
-  &__end {
-    padding: 25px 0;
-    background-color: var(--cl-body-bg);
-    &-text {
-      text-align: center;
-      @include text(mr, var(--fz-h5), 30px, var(--cl-white), none, none);
-    }
-  }
-  @include sm {
-    &__connect {
-      &-heading {
-        font-size: 18px;
-        line-height: 30px;
-      }
-    }
-    &__open {
-      &-heading {
-        font-size: 18px;
-      }
-      &-desc {
-        font-size: 13px;
-      }
-      & span {
-        font-size: 13px;
-      }
-    }
-  }
-  @include xs {
-    .container {
-      display: block;
-      margin: 50px 0;
-      padding: 0 40px;
-    }
-    &__contact {
-      max-width: unset;
-    }
-    &__connect {
-      margin-top: 30px;
-      width: 100%;
-      align-items: flex-start;
-      &-heading {
-        width: 100%;
-        max-width: unset;
-        text-align: unset;
-      }
-    }
-    &__open {
-      margin-top: 30px;
-      text-align: left;
-
-      &-heading {
-        font-size: 24px;
-      }
-      &-desc,
-      & span {
-        font-size: initial;
-      }
-    }
-  }
 }
 
 .backtotop {
-  display: flex;
-  height: 45px;
-  width: 45px;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 100;
-  opacity: 0;
-  visibility: hidden;
-  border-radius: 50%;
-  @include transform(translateX(50px));
-  @include transform-origin(left);
-  @include transition;
-  svg {
+    display: flex;
+    height: 45px;
+    width: 45px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 50%;
+    @include transform(translate(50px, -30px));
+    @include transform-origin(left);
     @include transition;
-    path {
-      @include transition;
-    }
-  }
-  &:hover {
     svg {
-      path {
-        stroke: #fff;
-      }
+        @include transition;
+        path {
+            @include transition;
+        }
     }
-  }
-  &.active {
-    opacity: 1;
-    visibility: visible;
-    @include transform(translateX(0px));
-    @include transition;
-    cursor: pointer;
-  }
+    &:hover {
+        svg {
+            path {
+                stroke: white;
+            }
+        }
+    }
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        @include transform(translate(0, -30px));
+        @include transition;
+        cursor: pointer;
+    }
 }

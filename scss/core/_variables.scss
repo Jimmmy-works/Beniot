@@ -1,29 +1,43 @@
 // media queries breakpoins
-$xxs-min: 568px;
-$xs-min: 768px;
-$sm-min: 992px;
-$md-min: 1200px;
-$lg-min: 1600px;
+/*GRID - media queries breakpoints*/
+$xxs-min: 576px; // CÓ THỂ TÙY CHỈNH
+$xs-min: 768px; // KHÔNG THAY ĐỔI
+$sm-min: 992px; // KHÔNG THAY ĐỔI
+$md-min: 1200px; // KHÔNG THAY ĐỔI
+$lg-min: 1600px; // CÓ THỂ TÙY CHỈNH
 
-$xxs-max: $xxs-min - 1;
-$xs-max: ($xs-min - 1);
-$sm-max: $sm-min - 1;
-$md-max: $md-min - 1;
-$lg-max: $lg-min - 1;
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
 
-$cl-primary: #bea67c;
-
+$t: 0.4s;
+// margin-top: 50px;
+// flex-wrap: nowrap;
+// justify-content: initial;
+// overflow: scroll;
+// /* Hide scrollbar for IE, Edge and Firefox */
+// -ms-overflow-style: none; /* IE and Edge */
+// scrollbar-width: none; /* Firefox */
+// /* Hide scrollbar for Chrome, Safari and Opera */
+// &::-webkit-scrollbar {
+//     display: none;
+// }
 :root {
-    --container-fluid-width: 1440px;
-    --gap-container-fluid: 32px;
-    --container-width: 1200px;
-    --gap-container: 0;
+    //=====================================CÁC BIẾN KHÔNG THAY ĐỔI GIÁ TRỊ KHI RESPONSIVE======================================
+    --container-fluid-width: 100%;
+    --container-max-width: 100%;
+    --container-width: 1230px;
+    --gap: 30px;
+    --pd-section: 100px;
+    --mg-section: 100px;
+
     --body-width: 2560px;
     --header-height: 100px;
     // color - bg color
     --cl-header: #0e1317;
     --cl-body-bg: #0e1317;
-    --cl-body: #fff;
     --cl-bg: #040404;
     --cl-primary: #b68c2d;
     --cl-white: #fff;
@@ -31,17 +45,81 @@ $cl-primary: #bea67c;
     --cl-black-h1: #090c0f;
     --cl-black-h2: #151b20;
     --cl-btn: #1c2329;
+    --cl-grey: #909090;
 
     // font-size
-    --fz-body: 16px;
-    --fz-h1: 128px;
-    --fz-h2: 40px;
-    --fz-h3: 24px;
-    --fz-h4: 20px;
-    --fz-h5: 16px;
-    --fz-h6: 14px;
-    --fz-90: 90px;
+    --fz-body: 1.6rem;
+
+    --fz-h1: 7.2rem;
+    --lh-h1: 8rem;
+
+    --fz-h2: 4rem;
+    --lh-h2: 5.4rem;
+
+    --fz-h3: 2.4rem;
+    --lh-h3: 4rem;
+
+    --fz-h4: 2rem;
+    --lh-h4: 3rem;
+
+    --fz-h5: 1.6rem;
+    --lh-h5: 3rem;
+
+    --fz-h6: 1.4rem;
+    --lh-h6: 3rem;
+
+    --fz-90: 9rem;
+    --lh-90: 9rem;
+
+    --fz-128: 12.8rem;
+    --lh-128: 15.5rem;
+    // transitions
     --time: 0.4s;
+    @media (max-width: $md-max) {
+        --fz-128: 110px;
+        --lh-128: 110px;
+    }
+    @media (max-width: 1100px) {
+    }
+    @media (max-width: 1050px) {
+    }
+    @media (max-width: $sm-max) {
+        // Tablet
+        --fz-128: 9rem;
+        --lh-128: 9rem;
+
+        --fz-h2: 3.3rem;
+        --lh-h2: 3.3rem;
+
+        --fz-90: 7rem;
+
+        --height-header: 70px;
+        --h2-fs: 8rem;
+
+        --pd-section: 80px;
+        --mg-section: 80px;
+    }
+    @media (max-width: $xs-max) {
+        // Mobile
+        --fz-128: 6.8rem;
+        --lh-128: 6.8rem;
+
+        --pd-section: 60px;
+        --mg-section: 60px;
+    }
+    @media screen and (max-width: $xs-max) and (orientation: landscape) {
+    }
+    @media (max-width: $xxs-max) {
+        // Mobile Small
+        --fz-128: 5rem;
+        --lh-128: 5rem;
+
+        --fz-h2: 2.5rem;
+        --lh-h2: 2.5rem;
+
+        --pd-section: 50px;
+        --mg-section: 50px;
+    }
 }
 @keyframes circleLogo {
     100% {

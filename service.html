@@ -1,202 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Service</title>
-    <!-- Favicon -->
-    <link rel="icon" href="./favicon-ico.ico" />
-    <!-- Meta tag fb -->
-    <meta property="og:locale" content="vi" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta
-      property="og:image"
-      content="https://cfdcircle.vn/files/thumbnails/8H13pIZXqFYMKY5tlsjtzRbreRLbwQKZN3KxU7BD.jpg"
-    />
-    <meta property="og:site_name" content="https://cfdcircle.vn" />
-    <meta property="og:url" content="" />
 
-    <!-- Meta tag GG -->
-    <meta
-      name="title"
-      content="Trang chủ - CFD Circle - Học viện đào tạo lập trình frontend thực chiến"
-    />
-    <meta
-      name="decription"
-      content="CFD Circle là học viện đào tạo lập trình frontend thực chiến, cung cấp các khoá học frontend từ cơ bản đến nâng cao nhằm kết nối và chia sẻ kinh nghiệm cùng đội ngũ giảng viên tâm huyết."
-    />
-    <meta
-      name="keyword"
-      content="khoa hoc frontend vue js, vue js, khoa hoc vue js, vuejs master, khoa hoc frontend cho nguoi moi, khoa hoc lap trinh, frontend, khoa hoc frontend, lap trinh front end, hoc lap trinh front end o dau, trung tam lap trinh frontend, front end, review trung tam day lap trinh, dạy lập trình front end, trung tâm dạy lập trinh ở tphcm, dạy lập trình frontend ở tphcm, khoá học front end tai tphcm, nên học lập trình ở đâu, cfd circle, web responsive, react js, lap trinh front-end, lap trinh frontend, lập trình frontend, cfd, cfd training, cfdcircle, newbie, vue js, css, html, lộ trình học frontend, hoc react js, khoa hoc react js, lo trinh hoc react js, lap trinh cho nguoi trai nganh, cfd studio, tran nghia, tran nghia cfd, trannghia, khoa hoc lap trinh frontend, hoc lap trinh tphcm, trung tam day lap trinh, trung tâm dạy lập trình, html, css, scss, css3, flexbox, api, khoa hoc lap trinh mien phi, redux, lo trinh hoc frontend, front end, front-end, tuyen dung frontend dev, tuyen dung it, vue js, khoa hoc lap trinh mien phi, khoa hoc lap trinh online, hoc lap trinh online, lap trinh frontend tphcm, cac khoa hoc frontend co phí, khoa hoc front end mien phi, thiet ke website mien phi, hoc thiet ke web, thiet ke web, web animation, hieu ung web,  tuyen dung it, tuyen dung frontend dev, doi tac cfd circle, giang vien cfd, tuyen dung backend, lap trinh vue js, vue js master, hoc vue js,"
-    />
-    <meta name="csrf-token" content="" />
-    <!-- Meta tag Twitter -->
-    <meta name="twitter:card" content="" />
-    <meta name="twitter:site" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service</title>
+  <!-- Favicon -->
+  <link rel="icon" href="./favicon-ico.ico" />
+  <!-- Meta tag fb -->
+  <meta property="og:locale" content="vi" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image"
+    content="https://cfdcircle.vn/files/thumbnails/8H13pIZXqFYMKY5tlsjtzRbreRLbwQKZN3KxU7BD.jpg" />
+  <meta property="og:site_name" content="https://cfdcircle.vn" />
+  <meta property="og:url" content="" />
 
-    <!-- Youtube -->
-    <!-- <iframe src="" frameborder="0"></iframe> .-->
-    <!-- <link rel="stylesheet" href="./dest/stylelibs.min.css" /> -->
-    <style>
-      .loading {
-          position: fixed;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          height: 100vh;
-          width: 100%;
-          z-index: 10000;
-          background-color: var(--cl-black-h2);
-          opacity:1;
-          visibility: visible;
-          transition:  0.4s;
-        }
-          .loading.active{
-            transition:  0.4s;
-            opacity:0;
-          visibility: hidden;
-          }
-            .ring {
-                  position: fixed;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  width: 150px;
-                  height: 150px;
-                  background: transparent;
-                  border: 3px solid #3c3c3c;
-                  border-radius: 50%;
-                  text-align: center;
-                  line-height: 150px;
-                  font-family: sans-serif;
-                  font-size: 20px;
-                  /* color: #fff000; */
-                  color: #fff000;
-                  letter-spacing: 4px;
-                  text-transform: uppercase;
-                  /* text-shadow: 0 0 10px #fff000; */
-                  text-shadow: 0 0 10px #fff000;
-                  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-                }
-          .ring:before {
-              content: '';
-              position: absolute;
-              top: -3px;
-              left: -3px;
-              width: 100%;
-              height: 100%;
-              border: 3px solid transparent;
-              border-top: 3px solid #fff000;
-              border-right: 3px solid #fff000;
-              border-radius: 50%;
-              animation: animate 2s linear infinite;
-          }
-          @keyframes animate {
-              0% {
-                  transform: rotate(0deg);
-              }
-              100% {
-                  transform: rotate(360deg);
-              }
-          }
-        
-    </style>
-    <link rel="stylesheet" href="./dest/style.min.css" />
-    <link rel="stylesheet" href="./dest/fonts.css" />
-  </head>
-  <body>
-    <div class="loading">
-      <div class="ring">Loading
+  <!-- Meta tag GG -->
+  <meta name="title" content="Trang chủ - CFD Circle - Học viện đào tạo lập trình frontend thực chiến" />
+  <meta name="decription"
+    content="CFD Circle là học viện đào tạo lập trình frontend thực chiến, cung cấp các khoá học frontend từ cơ bản đến nâng cao nhằm kết nối và chia sẻ kinh nghiệm cùng đội ngũ giảng viên tâm huyết." />
+  <meta name="keyword"
+    content="khoa hoc frontend vue js, vue js, khoa hoc vue js, vuejs master, khoa hoc frontend cho nguoi moi, khoa hoc lap trinh, frontend, khoa hoc frontend, lap trinh front end, hoc lap trinh front end o dau, trung tam lap trinh frontend, front end, review trung tam day lap trinh, dạy lập trình front end, trung tâm dạy lập trinh ở tphcm, dạy lập trình frontend ở tphcm, khoá học front end tai tphcm, nên học lập trình ở đâu, cfd circle, web responsive, react js, lap trinh front-end, lap trinh frontend, lập trình frontend, cfd, cfd training, cfdcircle, newbie, vue js, css, html, lộ trình học frontend, hoc react js, khoa hoc react js, lo trinh hoc react js, lap trinh cho nguoi trai nganh, cfd studio, tran nghia, tran nghia cfd, trannghia, khoa hoc lap trinh frontend, hoc lap trinh tphcm, trung tam day lap trinh, trung tâm dạy lập trình, html, css, scss, css3, flexbox, api, khoa hoc lap trinh mien phi, redux, lo trinh hoc frontend, front end, front-end, tuyen dung frontend dev, tuyen dung it, vue js, khoa hoc lap trinh mien phi, khoa hoc lap trinh online, hoc lap trinh online, lap trinh frontend tphcm, cac khoa hoc frontend co phí, khoa hoc front end mien phi, thiet ke website mien phi, hoc thiet ke web, thiet ke web, web animation, hieu ung web,  tuyen dung it, tuyen dung frontend dev, doi tac cfd circle, giang vien cfd, tuyen dung backend, lap trinh vue js, vue js master, hoc vue js," />
+  <meta name="csrf-token" content="" />
+  <!-- Meta tag Twitter -->
+  <meta name="twitter:card" content="" />
+  <meta name="twitter:site" content="" />
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:description" content="" />
+  <meta name="twitter:image" content="" />
+
+  <!-- Youtube -->
+  <!-- <iframe src="" frameborder="0"></iframe> .-->
+  <!-- <link rel="stylesheet" href="./dest/stylelibs.min.css" /> -->
+  <style>
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 10000;
+      background-color: var(--cl-black-h2);
+      opacity: 1;
+      visibility: visible;
+      /* transition: 0.4s; */
+    }
+
+    .loading.active {
+      /* transition: 0.4s; */
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .ring {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150px;
+      height: 150px;
+      background: transparent;
+      border: 3px solid #3c3c3c;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 150px;
+      font-family: sans-serif;
+      font-size: 20px;
+      /* color: #fff000; */
+      color: #fff000;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      /* text-shadow: 0 0 10px #fff000; */
+      text-shadow: 0 0 10px #fff000;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .ring:before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 100%;
+      height: 100%;
+      border: 3px solid transparent;
+      border-top: 3px solid #fff000;
+      border-right: 3px solid #fff000;
+      border-radius: 50%;
+      animation: animate 2s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="./dest/style.min.css" />
+  <link rel="stylesheet" href="./dest/fonts.css" />
+</head>
+
+<body>
+  <div class="loading">
+    <div class="ring">Loading
+      <span></span>
+    </div>
+  </div>
+  <div class="processbar"></div>
+  <nav class="nav">
+    <div class="nav__inner">
+      <ul class="nav__inner-list">
+        <li class="item"> <a href="./index.html">TRANG CHỦ</a></li>
+        <li class="item"><a href="./about.html">VỀ CHÚNG TÔI</a></li>
+        <li class="item"><a href="./service.html">DỊCH VỤ</a></li>
+        <li class="item"><a href="./event.html">SỰ KIỆN</a></li>
+        <li class="item submenunav ">
+          <a>THỰC ĐƠN
+            <div class=" img">
+              <svg width="10" height="10" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 1L7 7L1 1" stroke="white" />
+              </svg>
+            </div>
+          </a>
+          <ul class="menunavlist">
+            <li class="menunavlist__item"><a href="./menu.html">MÓN Á</a></li>
+            <li class="menunavlist__item"><a href="./menu-detail-eu.html">MÓN ÂU</a></li>
+            <li class="menunavlist__item"><a href="./menu-detail-dessert.html">TRÁNG MIỆNG</a></li>
+          </ul>
+        </li>
+
+        <li class="item"><a href="./destination.html">ĐIỂM ĐẾN</a></li>
+        <li class="item"><a href="./libs.html">THƯ VIỆN</a></li>
+        <li class="item"><a href="./contact.html">LIÊN HỆ</a></li>
+        <button class="btn__reverse">ĐẶT BÀN</button>
+      </ul>
+    </div>
+  </nav>
+  <header class="header">
+    <div class="container">
+      <div class="btn__hamberger not-active">
+        <span></span>
+        <span></span>
         <span></span>
       </div>
-    </div>
-    <div class="processbar"></div>
-    <header class="header">
-      <div class="container">
-        <div class="btn__menu">
-          <span class="btn__menu-item"></span>
-          <span class="btn__menu-item"></span>
-          <span class="btn__menu-item"></span>
-        </div>
-        <a href="./index.html" class="logo">
-          <img src="./img/logo-group.svg" alt="" />
-        </a>
-        <ul class="menu">
-          <li class="menu__item">
-            <a href="./index.html">TRANG CHỦ</a>
-          </li>
-          <li class="menu__item">
-            <a href="./about.html">VỀ CHÚNG TÔI</a>
-          </li>
-          <li class="menu__item">
-            <a href="./service.html">DỊCH VỤ</a>
-          </li>
-          <li class="menu__item">
-            <a href="./event.html">SỰ KIỆN</a>
-          </li>
-          <li class="menu__item">
-            <a href="./offer.html">THỰC ĐƠN</a>
-          </li>
-          <li class="menu__item">
-            <a href="./placename.html">ĐIỂM ĐẾN</a>
-          </li>
-          <li class="menu__item">
-            <a href="./ourblog.html">THƯ VIỆN</a>
-          </li>
-          <li class="menu__item">
-            <a href="./contact.html">LIÊN HỆ</a>
-          </li>
-        </ul>
-        <div class="language">
-          <span class="language__current">EN</span>
-          <div class="language__img">
-            <img srcset="./img/logo-down-@2x.png 2x" alt="" />
+      <a href="./index.html" class="logo">
+        <img src="./img/logo-group.svg" alt="" />
+      </a>
+      <ul class="menu">
+        <li class="menu__item">
+          <a href="./index.html">TRANG CHỦ</a>
+        </li>
+        <li class="menu__item">
+          <a href="./about.html">VỀ CHÚNG TÔI</a>
+        </li>
+        <li class="menu__item">
+          <a href="./service.html">DỊCH VỤ</a>
+        </li>
+        <li class="menu__item">
+          <a href="./event.html">SỰ KIỆN</a>
+        </li>
+        <li class="menu__item submenu">
+          <div class="submenu__img">
+            <svg width="10" height="10" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 1L7 7L1 1" stroke="white" />
+            </svg>
           </div>
-          <ul class="language__list">
-            <li class="language__list-item"><a href="">VN</a></li>
-            <li class="language__list-item"><a href="">JAP</a></li>
-            <li class="language__list-item"><a href="">CHI</a></li>
+          <ul class="menulist">
+            <li class="menulist__item"><a href="./menu.html">MÓN Á</a></li>
+            <li class="menulist__item"><a href="./menu-detail-eu.html">MÓN ÂU</a></li>
+            <li class="menulist__item"><a href="./menu-detail-dessert.html">TRÁNG MIỆNG</a></li>
           </ul>
+          <a>THỰC ĐƠN</a>
+        </li>
+        <li class="menu__item">
+          <a href="./destination.html">ĐIỂM ĐẾN</a>
+        </li>
+        <li class="menu__item">
+          <a href="./libs.html">THƯ VIỆN</a>
+        </li>
+        <li class="menu__item">
+          <a href="./contact.html">LIÊN HỆ</a>
+        </li>
+      </ul>
+
+      <div class="language">
+        <span class="language__current">EN</span>
+        <div class="language__img">
+          <img srcset="./img/logo-down-@2x.png 2x" alt="" />
         </div>
-        <button class="btn__reverse">ĐẶT BÀN</button>
-        <nav class="nav">
-          <div class="nav__inner">
-            <ul>
-              <li><a href="./index.html">TRANG CHỦ</a></li>
-              <li><a href="./about.html">VỀ CHÚNG TÔI</a></li>
-              <li><a href="./service.html">DỊCH VỤ</a></li>
-              <li><a href="./offer.html">THỰC ĐƠN</a></li>
-              <li><a href="./event.html">SỰ KIỆN</a></li>
-              <li><a href="./placename.html">ĐIỂM ĐẾN</a></li>
-              <li><a href="./ourblog.html">THƯ VIỆN</a></li>
-              <li><a href="./contact.html">LIÊN HỆ</a></li>
-              <button class="btn__reverse">ĐẶT BÀN</button>
-            </ul>
-          </div>
-        </nav>
+        <ul class="language__list">
+          <li class="language__list-item"><a href="">VN</a></li>
+          <li class="language__list-item"><a href="">JAP</a></li>
+          <li class="language__list-item"><a href="">CHI</a></li>
+        </ul>
       </div>
-    </header>
-    <main class="main__service">
-      <section class="hero">
-        <div class="hero__img">
-          <img src="./img/service-banner-3.jpg" alt="" />
-        </div>
+      <button class="btn__reverse">ĐẶT BÀN</button>
+    </div>
+  </header>
+  <main class="main__service">
+    <section class="hero">
+      <div class="container">
         <div class="textbox__archon">
           <h3 class="textbox__archon-heading">DỊCH VỤ</h3>
           <div class="textbox__archon-click">
-            <a href="./index.html" class="prevHome"><h3>TRANG CHỦ</h3></a>
-            <a href="./service.html" class="nextService"><h3>DỊCH VỤ</h3></a>
+            <a href="./index.html" class="prevHome">
+              <h3>TRANG CHỦ</h3>
+            </a>
+            <h3 class="nextService">
+              DỊCH VỤ
+            </h3>
           </div>
         </div>
-      </section>
-      <section class="ourservice">
+      </div>
+    </section>
+    <section class="ourservice pd">
+      <div class="container">
         <div class="textbox__center">
           <div class="heading">
             <p>Our services</p>
@@ -209,153 +235,130 @@
         <div class="ourservice__list">
           <a href="./freshproduct.html" class="ourservice__list-item">
             <div class="img">
-              <img src="./img/ourservice-3.jpg" alt="" />
+              <img src="./img/service-ourservice-1.jpg" alt="" />
             </div>
             <p class="content">Fresh Products</p>
           </a>
           <a href="./freshproduct.html" class="ourservice__list-item">
             <div class="img">
-              <img src="./img/ourservice-1.jpg" alt="" />
+              <img src="./img/service-ourservice-2.jpg" alt="" />
             </div>
             <p class="content">Drinkings Time</p>
           </a>
           <a href="./freshproduct.html" class="ourservice__list-item">
             <div class="img">
-              <img src="./img/contact-banner-3.jpg" alt="" />
+              <img src="./img/service-ourservice-3.jpg" alt="" />
             </div>
             <p class="content">Station Food</p>
           </a>
           <a href="./freshproduct.html" class="ourservice__list-item">
             <div class="img">
-              <img src="./img/service-banner-3.jpg" alt="" />
+              <img src="./img/service-ourservice-4.jpg" alt="" />
             </div>
-            <p class="content">View Bar Restaurant</p>
+            <p class="content">Station Food</p>
+          </a>
+          <a href="./freshproduct.html" class="ourservice__list-item">
+            <div class="img">
+              <img src="./img/service-ourservice-5.jpg" alt="" />
+            </div>
+            <p class="content">Station Food</p>
           </a>
         </div>
-      </section>
-      <section class="benefit">
-        <div class="container">
-          <div class="benefit__content">
-            <div class="textbox__left">
-              <div class="heading">
-                <p>Some Benefits</p>
-                <h3>Only Quality Coffee Beans</h3>
-              </div>
-              <div class="linemain --right --left --center">
-                <span></span>
-              </div>
-            </div>
-            <div class="benefit__content-list">
-              <div class="item">
-                <img src="./img/aboutUs-benefit.svg" alt="" />
-                <p class="text">
-                  From signature delights such as beef tartare and best mashed
-                  potato in Paris, all the way to unique.
-                </p>
-              </div>
-              <div class="item">
-                <img src="./img/aboutUs-benefit.svg" alt="" />
-                <p class="text">
-                  Sustainable fishing, rediscovered grains, exclusively grown
-                  vegetables from the queen’s garden.
-                </p>
-              </div>
-              <div class="item">
-                <img src="./img/aboutUs-benefit.svg" alt="" />
-                <p class="text">
-                  Our cuisine interprets the concept of ‘nature generosity by
-                  celebrating the trilogy of fish, vegetables.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="benefit__img">
-            <img src="./img/aboutUs-benefit-banner.jpg" alt="" />
-            <div class="textbox__absolute">
-              <h3 class="textbox__absolute-heading">Coffee Moments</h3>
-              <p class="textbox__absolute-desc">Every 10 Coffee is Free</p>
-              <div class="btn__white">
-                <a href="./ourblog.html"> KHÁM PHÁ THÊM</a>
-              </div>
-            </div>
-            <svg
-              width="298"
-              height="292"
-              viewBox="0 0 298 292"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <rect width="298" height="292" fill="url(#pattern0)" />
-              <defs>
-                <pattern
-                  id="pattern0"
-                  patternContentUnits="objectBoundingBox"
-                  width="1"
-                  height="1"
-                >
-                  <use
-                    xlink:href="#image0_1_1615"
-                    transform="scale(0.0033557 0.00342466)"
-                  />
-                </pattern>
-                <image
-                  id="image0_1_1615"
-                  width="298"
-                  height="292"
-                  xlink:href="data:image/png;base64,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"
-                />
-              </defs>
-            </svg>
-          </div>
-        </div>
-      </section>
-      <section class="data">
-        <div class="container">
-          <div class="data__list">
-            <div class="textbox__number">
-              <h3 data-count="200" class="value textbox__number-heading">0</h3>
-              <p class="textbox__number-desc">Clients Every Day</p>
-            </div>
-            <div class="textbox__number">
-              <h3 data-count="180" class="value textbox__number-heading">0</h3>
-              <p class="textbox__number-desc">Great Moments</p>
-            </div>
-            <div class="textbox__number">
-              <h3 data-count="350" class="value textbox__number-heading">0</h3>
-              <p class="textbox__number-desc">Cups of Coffee Daily</p>
-            </div>
-            <div class="textbox__number">
-              <h3 data-count="250" class="value textbox__number-heading">0</h3>
-              <p class="textbox__number-desc">Types of Coffee</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="package">
-        <div class="container">
-          <div class="textbox__center">
+      </div>
+    </section>
+    <section class="benefit pdB">
+      <div class="container">
+        <div class="benefit__content">
+          <div class="textbox__left">
             <div class="heading">
-              <p>Pricing Plan</p>
-              <h3>Best Service Possible</h3>
+              <p>Some Benefits</p>
+              <h3>Only Quality Coffee Beans</h3>
             </div>
-            <div class="linemain --right --left">
+            <div class="linemain --right --left --center">
               <span></span>
             </div>
           </div>
+          <div class="benefit__content-list">
+            <div class="item">
+              <img src="./img/aboutUs-benefit.svg" alt="" />
+              <p class="text">
+                From signature delights such as beef tartare and best mashed
+                potato in Paris, all the way to unique.
+              </p>
+            </div>
+            <div class="item">
+              <img src="./img/aboutUs-benefit.svg" alt="" />
+              <p class="text">
+                Sustainable fishing, rediscovered grains, exclusively grown
+                vegetables from the queen’s garden.
+              </p>
+            </div>
+            <div class="item">
+              <img src="./img/aboutUs-benefit.svg" alt="" />
+              <p class="text">
+                Our cuisine interprets the concept of ‘nature generosity by
+                celebrating the trilogy of fish, vegetables.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="benefit__img">
+          <img class="benefit__img-bg" src="./img/aboutUs-benefit-banner.jpg" alt="" />
+          <div class="textbox__absolute">
+            <h3 class="textbox__absolute-heading">Coffee Moments</h3>
+            <p class="textbox__absolute-desc">Every 10 Coffee is Free</p>
+            <div class="btn__white">
+              <a href="./ourblog.html"> KHÁM PHÁ THÊM</a>
+            </div>
+          </div>
+          <img src="./img/service-benefit-decor.svg" alt="" class="benefit__img-decor">
+        </div>
+      </div>
+    </section>
+    <section class="data">
+      <div class="container">
+        <div class="data__list">
+          <div class="textbox__number">
+            <h3 data-count="200" class="value textbox__number-heading">0</h3>
+            <p class="textbox__number-desc">Clients Every Day</p>
+          </div>
+          <div class="textbox__number">
+            <h3 data-count="180" class="value textbox__number-heading">0</h3>
+            <p class="textbox__number-desc">Great Moments</p>
+          </div>
+          <div class="textbox__number">
+            <h3 data-count="350" class="value textbox__number-heading">0</h3>
+            <p class="textbox__number-desc">Cups of Coffee Daily</p>
+          </div>
+          <div class="textbox__number">
+            <h3 data-count="250" class="value textbox__number-heading">0</h3>
+            <p class="textbox__number-desc">Types of Coffee</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="package pd">
+      <div class="container">
+        <div class="package__bg">
+          <img src="./img/price.svg" alt="">
+        </div>
+        <div class="textbox__center">
+          <div class="heading">
+            <p>Pricing Plan</p>
+            <h3>Best Service Possible</h3>
+          </div>
+          <div class="linemain --right --left">
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <div class="package__wrap">
+        <div class="container">
           <div class="package__list">
-            <div class="package__list-item --height">
+            <div class="package__list-item --blue --height">
               <div class="img">
-                <img
-                  class="img__decor"
-                  src="./img/aboutUs-package-decor.svg"
-                  alt=""
-                />
-                <img
-                  class="img__logo"
-                  src="./img/circle-and-logomain.svg"
-                  alt=""
-                />
+                <img class="img__decor" src="./img/aboutUs-package-decor.svg" alt="" />
+                <img class="img__logo" src="./img/circle-and-logomain.svg" alt="" />
               </div>
               <div class="text">
                 <h4 class="text__heading">Royal Silver</h4>
@@ -372,18 +375,10 @@
                 <button class="btn__reverse">ĐẶT BÀN</button>
               </div>
             </div>
-            <div class="package__list-item --black">
+            <div class="package__list-item --black active">
               <div class="img">
-                <img
-                  class="img__decor"
-                  src="./img/aboutUs-package-decor.svg"
-                  alt=""
-                />
-                <img
-                  class="img__logo"
-                  src="./img/circle-and-logomain.svg"
-                  alt=""
-                />
+                <img class="img__decor" src="./img/aboutUs-package-decor.svg" alt="" />
+                <img class="img__logo" src="./img/circle-and-logomain.svg" alt="" />
               </div>
               <div class="text">
                 <h4 class="text__heading">Diamond Delights</h4>
@@ -401,18 +396,10 @@
                 <button class="btn__reverse">ĐẶT BÀN</button>
               </div>
             </div>
-            <div class="package__list-item --height">
+            <div class="package__list-item --blue --height">
               <div class="img">
-                <img
-                  class="img__decor"
-                  src="./img/aboutUs-package-decor.svg"
-                  alt=""
-                />
-                <img
-                  class="img__logo"
-                  src="./img/circle-and-logomain.svg"
-                  alt=""
-                />
+                <img class="img__decor" src="./img/aboutUs-package-decor.svg" alt="" />
+                <img class="img__logo" src="./img/circle-and-logomain.svg" alt="" />
               </div>
               <div class="text">
                 <h4 class="text__heading">Golden Care</h4>
@@ -431,166 +418,80 @@
             </div>
           </div>
         </div>
-      </section>
-      <section class="philosophy">
-        <div class="container">
-          <div class="philosophy__img">
-            <img src="./img/philosophy-img-1.jpg" alt="" />
-          </div>
-          <div class="philosophy__text">
-            <div class="textbox__center">
-              <div class="heading">
-                <p>Our Philosophy</p>
-                <h3>Chef’s Words</h3>
-              </div>
-              <div class="linemain --right --left">
-                <span></span>
-              </div>
-              <p class="desc">
-                Depending on the day of your visit to the restaurant, you will
-                experience one of our creations.
-              </p>
-              <p class="text">
-                It spreads over three levels on the hillside, surrounded by lush
-                vegetation. The elegant, spacious & light-drenched dining room
-                commands a panoramic view of the sky, the sea and the town of
-                Menton through the large windows running all the way around.
-              </p>
-              <div class="philosophy__text-img">
-                <img src="./img/philosophy-signature.svg" alt="" />
-              </div>
+      </div>
+    </section>
+    <section class="philosophy pdB pdT">
+      <div class="container">
+        <div class="philosophy__img">
+          <img src="./img/philosophy-img-1.jpg" alt="" />
+        </div>
+        <div class="philosophy__text">
+          <div class="textbox__center">
+            <div class="heading">
+              <p>Our Philosophy</p>
+              <h3>Chef’s Words</h3>
+            </div>
+            <div class="linemain --right --left">
+              <span></span>
+            </div>
+            <p class="desc">
+              Depending on the day of your visit to the restaurant, you will
+              experience one of our creations.
+            </p>
+            <p class="text">
+              It spreads over three levels on the hillside, surrounded by lush
+              vegetation. The elegant, spacious & light-drenched dining room
+              commands a panoramic view of the sky, the sea and the town of
+              Menton through the large windows running all the way around.
+            </p>
+            <div class="philosophy__text-img">
+              <img src="./img/philosophy-signature.svg" alt="" />
             </div>
           </div>
-          <div class="philosophy__img">
-            <img src="./img/philosophy-img-2.jpg" alt="" />
-          </div>
         </div>
-      </section>
-    </main>
-    <footer id="footer" class="footer">
-      <div class="container">
-        <div class="footer__contact">
-          <h4 class="footer__contact-heading">Contacts</h4>
-          <a
-            target="_blank"
+        <div class="philosophy__img">
+          <img src="./img/philosophy-img-2.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer" class="footer ">
+    <div class="footer__top pd ">
+      <div class="container ">
+        <div class="footer__top-contact">
+          <h4 class="heading">Contacts</h4>
+          <a target="_blank"
             href="https://www.google.com/maps/place/CFD+Circle/@10.7674787,106.6590382,17z/data=!3m1!4b1!4m5!3m4!1s0x31752f395fd1dc21:0xa0d9dc906e1f6626!8m2!3d10.7674787!4d106.6612269"
-            class="footer__contact-location"
-          >
-            <svg
-              width="20"
-              height="30"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_9_776)">
-                <path
-                  d="M20 19C22.2091 19 24 17.2091 24 15C24 12.7909 22.2091 11 20 11C17.7909 11 16 12.7909 16 15C16 17.2091 17.7909 19 20 19Z"
-                  stroke="#B68C2D"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M28.0002 19C25.0002 26 20.0002 34 20.0002 34C20.0002 34 15.0002 26 12.0002 19C9.00024 12 14.0002 6 20.0002 6C26.0002 6 31.0002 12 28.0002 19Z"
-                  stroke="#B68C2D"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_9_776">
-                  <rect
-                    width="20"
-                    height="30"
-                    fill="white"
-                    transform="translate(10 5)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-            <p class="text">5 Rue Dalou, 75015 Paris</p>
+            class="location">
+            <img src="./img/location-icon.svg" alt="">
+            <p class="location__text"> 5 Rue Dalou, 75015 Paris </p>
           </a>
-          <a
-            href="tel: +33 156 78 89 56"
-            target="_blank"
-            class="footer__contact-phone"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 40 40"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_9_783)">
-                <path
-                  d="M24.7972 24.5134L24.7973 24.5136L24.8064 24.5045C24.8756 24.4353 25.0099 24.3585 25.1879 24.3174C25.3511 24.2797 25.5076 24.2823 25.6263 24.3152C26.2198 24.6014 27.038 24.7602 27.7009 24.8889C27.7927 24.9067 27.8815 24.924 27.9664 24.9409C28.319 25.0274 28.7719 25.0656 29.2245 25.0845C29.6877 25.1038 30.1868 25.1038 30.6361 25.1038H30.6415C31.1201 25.1038 31.5 25.4837 31.5 25.9623V30.6415C31.5 31.0442 31.2015 31.5 30.6415 31.5C24.7379 31.5 19.1288 29.1387 14.9951 25.0049C10.8613 20.8712 8.5 15.2621 8.5 9.35849C8.5 8.79851 8.95577 8.5 9.35849 8.5H14.0377C14.5163 8.5 14.8962 8.87992 14.8962 9.35849L14.8962 9.38611C14.8962 10.1244 14.8962 11.219 15.0569 12.0226L15.0592 12.0343L15.0621 12.0458C15.0962 12.1821 15.1305 12.3357 15.1687 12.5063L15.1748 12.5337C15.2148 12.7126 15.2585 12.9069 15.3074 13.1024C15.4002 13.4736 15.5185 13.8783 15.6849 14.223C15.718 14.3423 15.7026 14.4445 15.6743 14.4964C15.6621 14.5187 15.6457 14.5371 15.6162 14.553C15.5844 14.5701 15.5183 14.5943 15.3962 14.5943H15.1816L15.0337 14.75L12.1658 17.7688L11.9242 18.0231L12.0811 18.3368C13.1681 20.5107 14.5633 22.2138 15.9483 23.5988C17.4862 25.1367 19.0383 26.38 21.2104 27.4661L21.5241 27.6229L21.7783 27.3814L24.7972 24.5134Z"
-                  stroke="#B68C2D"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_9_783">
-                  <rect
-                    width="24"
-                    height="24"
-                    fill="white"
-                    transform="translate(8 8)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
-            <p class="text">+33 156 78 89 56</p>
+          <a href="tel: +33 156 78 89 56" target="_blank" class="phone">
+            <img src="./img/phone-icon.svg" alt="">
+            <p class="phone__text"> +33 156 78 89 56</p>
           </a>
-          <a href="mailto:reservation@gmail." class="footer__contact-email">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M22.8002 12C22.8002 9.74336 22.0934 7.54345 20.7789 5.70919C19.4645 3.87493 17.6086 2.49846 15.4717 1.77311C13.3349 1.04775 11.0245 1.00994 8.86512 1.665C6.7057 2.32005 4.8057 3.63505 3.43198 5.42533C2.05825 7.2156 1.27981 9.3912 1.20598 11.6466C1.13214 13.902 1.76663 16.1238 3.02032 18.0001C4.27402 19.8764 6.08394 21.3128 8.19589 22.1077C10.3078 22.9026 12.6157 23.016 14.7954 22.4319"
-                stroke="#B68C2D"
-                stroke-linecap="round"
-              />
-              <circle cx="12.0002" cy="12" r="4.8" stroke="#B68C2D" />
-              <path
-                d="M16.7998 8.3999V13.7999C16.7998 15.4568 18.143 16.7999 19.7998 16.7999V16.7999C21.4567 16.7999 22.7998 15.4568 22.7998 13.7999V11.9999"
-                stroke="#B68C2D"
-                stroke-linecap="round"
-              />
-            </svg>
-            <p class="text">reservation</p>
+          <a href="mailto:reservation@gmail." class="email">
+            <img src="./img/email-icon.svg" alt="">
+            <p class="email__text"> reservation</p>
           </a>
         </div>
-        <div class="footer__connect">
-          <a href="./index.html" class="footer__connect-logo">
+        <div class="footer__top-connect">
+          <a href="./index.html" class="logo">
             <img src="./img/logo-group.svg" alt="" />
           </a>
-          <h4 class="footer__connect-heading">
-            Whisper to us about your feelings, and we will prepare what you need
-            now.
+          <h4 class="heading">Whisper to us about your feelings, and we will prepare what you need now.
           </h4>
-          <div class="footer__connect-social">
+          <div class="social">
             <a target="_blank" href="https://twitter.com/" class="tw">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="#fff"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_9_805)">
                   <path
                     d="M15.9998 -0.0339355C7.15782 -0.0339355 -0.0341797 7.15806 -0.0341797 16.0001C-0.0341797 24.8421 7.15782 32.0341 15.9998 32.0341C24.8418 32.0341 32.0338 24.8421 32.0338 16.0001C32.0338 7.15806 24.8418 -0.0339355 15.9998 -0.0339355ZM15.9998 30.9661C7.74782 30.9661 1.03382 24.2521 1.03382 16.0001C1.03382 7.74806 7.74782 1.03406 15.9998 1.03406C24.2518 1.03406 30.9658 7.74806 30.9658 16.0001C30.9658 24.2521 24.2518 30.9661 15.9998 30.9661Z"
-                    fill="white"
-                  />
+                    fill="white" />
                   <g clip-path="url(#clip1_9_805)">
                     <path
                       d="M22.1064 13.1978C22.1168 13.3378 22.1168 13.477 22.1168 13.6162C22.1168 17.8762 18.8744 22.785 12.9488 22.785C11.1232 22.785 9.4272 22.2562 8 21.3378C8.2592 21.3674 8.5088 21.3778 8.7784 21.3778C10.2288 21.3813 11.6381 20.8963 12.7792 20.001C12.1067 19.9888 11.4549 19.7669 10.9146 19.3664C10.3743 18.9658 9.97263 18.4065 9.7656 17.7666C9.9648 17.7962 10.1648 17.8162 10.3744 17.8162C10.6632 17.8162 10.9536 17.7762 11.2232 17.7066C10.4934 17.5592 9.83718 17.1637 9.36609 16.5871C8.89501 16.0106 8.63815 15.2887 8.6392 14.5442V14.5042C9.0688 14.7434 9.5672 14.893 10.0952 14.913C9.65287 14.619 9.29018 14.2202 9.03947 13.752C8.78877 13.2838 8.65785 12.7609 8.6584 12.2298C8.6584 11.6314 8.8176 11.0826 9.0968 10.6042C9.90651 11.6002 10.9164 12.415 12.0611 12.9959C13.2057 13.5768 14.4596 13.9108 15.7416 13.9762C15.692 13.7362 15.6616 13.4874 15.6616 13.2378C15.6614 12.8146 15.7446 12.3954 15.9065 12.0044C16.0683 11.6133 16.3057 11.258 16.6049 10.9587C16.9042 10.6595 17.2595 10.4221 17.6506 10.2602C18.0416 10.0984 18.4608 10.0152 18.884 10.0154C19.812 10.0154 20.6496 10.4042 21.2384 11.033C21.9598 10.8935 22.6516 10.6301 23.2832 10.2546C23.0427 10.9992 22.539 11.6307 21.8664 12.0306C22.5062 11.9576 23.1315 11.7893 23.7216 11.5314C23.2809 12.1739 22.7348 12.7373 22.1064 13.1978Z"
-                      fill="white"
-                    />
+                      fill="white" />
                   </g>
                 </g>
                 <defs>
@@ -598,56 +499,31 @@
                     <rect width="32" height="32" fill="white" />
                   </clipPath>
                   <clipPath id="clip1_9_805">
-                    <rect
-                      width="16"
-                      height="12.8"
-                      fill="white"
-                      transform="translate(8 10.0002)"
-                    />
+                    <rect width="16" height="12.8" fill="white" transform="translate(8 10.0002)" />
                   </clipPath>
                 </defs>
               </svg>
             </a>
-            <a
-              target="_blank"
-              href="https://www.facebook.com/profile.php?id=100084745624368"
-              class="fb"
-            >
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="#fff"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+            <a target="_blank" href="https://www.facebook.com/profile.php?id=100084745624368" class="fb">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16 0C7.17675 0 0 7.17675 0 16C0 24.8233 7.17675 32 16 32C24.8233 32 32 24.8233 32 16C32 7.17675 24.8233 0 16 0ZM16 30.9343C7.7655 30.9343 1.06574 24.2345 1.06574 16C1.06574 7.7655 7.7655 1.06574 16 1.06574C24.2345 1.06574 30.9343 7.7655 30.9343 16C30.9343 24.2345 24.2345 30.9343 16 30.9343Z"
-                  fill="white"
-                />
+                  fill="white" />
                 <path
                   d="M14.4294 23.9492H17.3532V16.6647H19.798L20.1672 13.8307H17.3532V12.0146C17.3532 11.1963 17.5827 10.6375 18.7602 10.6375H20.267V8.09292C20.0075 8.06298 19.1194 7.98315 18.0816 7.98315C15.9063 7.98315 14.4294 9.31033 14.4294 11.7352V13.8307H11.9746V16.6647H14.4294V23.9492Z"
-                  fill="white"
-                />
+                  fill="white" />
               </svg>
             </a>
-            <a target="_blank" href="https://www.linkedin.com/" class="linkend">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="#fff"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+            <a target="_blank" href='https://www.linkedin.com/' class="linkend">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_9_815)">
                   <path
                     d="M15.9998 -0.0339355C7.15782 -0.0339355 -0.0341797 7.15806 -0.0341797 16.0001C-0.0341797 24.8421 7.15782 32.0341 15.9998 32.0341C24.8418 32.0341 32.0338 24.8421 32.0338 16.0001C32.0338 7.15806 24.8418 -0.0339355 15.9998 -0.0339355ZM15.9998 30.9661C7.74782 30.9661 1.03382 24.2521 1.03382 16.0001C1.03382 7.74806 7.74782 1.03406 15.9998 1.03406C24.2518 1.03406 30.9658 7.74806 30.9658 16.0001C30.9658 24.2521 24.2518 30.9661 15.9998 30.9661Z"
-                    fill="white"
-                  />
+                    fill="white" />
                   <g clip-path="url(#clip1_9_815)">
                     <path
                       d="M16.5983 22.0002H13.9316V14.0002H16.5983V15.3336C16.879 14.9764 17.2353 14.6858 17.6416 14.4826C18.0479 14.2794 18.4941 14.1686 18.9483 14.1582C19.7426 14.1626 20.5027 14.4819 21.0619 15.0459C21.6212 15.6099 21.9339 16.3726 21.9316 17.1669V22.0002H19.265V17.5002C19.2134 17.14 19.0334 16.8104 18.7582 16.5723C18.4829 16.3342 18.1309 16.2035 17.767 16.2042C17.6041 16.2094 17.4439 16.2474 17.296 16.316C17.1482 16.3845 17.0157 16.4823 16.9066 16.6033C16.7975 16.7244 16.7139 16.8662 16.6609 17.0203C16.6079 17.1744 16.5866 17.3377 16.5983 17.5002V22.0002ZM12.5983 22.0002H9.93164V14.0002H12.5983V22.0002ZM11.265 12.6669C10.9114 12.6669 10.5722 12.5264 10.3222 12.2764C10.0721 12.0263 9.93164 11.6872 9.93164 11.3336C9.93164 10.98 10.0721 10.6408 10.3222 10.3908C10.5722 10.1407 10.9114 10.0002 11.265 10.0002C11.6186 10.0002 11.9577 10.1407 12.2078 10.3908C12.4578 10.6408 12.5983 10.98 12.5983 11.3336C12.5983 11.6872 12.4578 12.0263 12.2078 12.2764C11.9577 12.5264 11.6186 12.6669 11.265 12.6669Z"
-                      fill="white"
-                    />
+                      fill="white" />
                   </g>
                 </g>
                 <defs>
@@ -655,116 +531,77 @@
                     <rect width="32" height="32" fill="white" />
                   </clipPath>
                   <clipPath id="clip1_9_815">
-                    <rect
-                      width="12"
-                      height="12"
-                      fill="white"
-                      transform="translate(9.93164 10.0002)"
-                    />
+                    <rect width="12" height="12" fill="white" transform="translate(9.93164 10.0002)" />
                   </clipPath>
                 </defs>
               </svg>
             </a>
             <a target="_blank" href="https://www.instagram.com/" class="ins">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="#fff"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16 0C7.17675 0 0 7.17675 0 16C0 24.8233 7.17675 32 16 32C24.8233 32 32 24.8233 32 16C32 7.17675 24.8233 0 16 0ZM16 30.9343C7.7655 30.9343 1.06574 24.2345 1.06574 16C1.06574 7.7655 7.7655 1.06574 16 1.06574C24.2345 1.06574 30.9343 7.7655 30.9343 16C30.9343 24.2345 24.2345 30.9343 16 30.9343Z"
-                  fill="white"
-                />
+                  fill="white" />
                 <g clip-path="url(#clip0_9_821)">
                   <path
                     d="M15.9661 11.8748C15.1569 11.8748 14.3659 12.1148 13.6931 12.5643C13.0203 13.0139 12.4959 13.6529 12.1862 14.4004C11.8766 15.148 11.7956 15.9707 11.9534 16.7643C12.1113 17.5579 12.5009 18.2869 13.0731 18.8591C13.6453 19.4313 14.3743 19.8209 15.1679 19.9788C15.9616 20.1367 16.7842 20.0556 17.5318 19.746C18.2794 19.4363 18.9184 18.9119 19.3679 18.2391C19.8175 17.5663 20.0574 16.7753 20.0574 15.9661C20.0587 15.4285 19.9538 14.8959 19.7487 14.3989C19.5435 13.9019 19.2422 13.4504 18.862 13.0702C18.4819 12.69 18.0303 12.3887 17.5333 12.1836C17.0364 11.9784 16.5038 11.8735 15.9661 11.8748ZM15.9661 18.6305C15.4392 18.6305 14.924 18.4742 14.4859 18.1814C14.0477 17.8887 13.7062 17.4726 13.5046 16.9857C13.3029 16.4989 13.2502 15.9632 13.353 15.4463C13.4558 14.9295 13.7095 14.4548 14.0821 14.0821C14.4548 13.7095 14.9295 13.4558 15.4463 13.353C15.9632 13.2502 16.4989 13.3029 16.9857 13.5046C17.4726 13.7062 17.8887 14.0477 18.1814 14.4859C18.4742 14.924 18.6305 15.4392 18.6305 15.9661C18.6305 16.6727 18.3497 17.3504 17.8501 17.8501C17.3504 18.3497 16.6727 18.6305 15.9661 18.6305ZM21.185 11.7052C21.185 11.9025 21.1265 12.0955 21.0169 12.2596C20.9072 12.4237 20.7514 12.5516 20.569 12.6271C20.3867 12.7026 20.186 12.7224 19.9925 12.6839C19.7989 12.6454 19.6211 12.5503 19.4815 12.4108C19.342 12.2712 19.2469 12.0934 19.2084 11.8998C19.1699 11.7063 19.1897 11.5056 19.2652 11.3233C19.3408 11.141 19.4687 10.9851 19.6328 10.8755C19.7969 10.7658 19.9898 10.7073 20.1871 10.7073C20.4518 10.7073 20.7056 10.8124 20.8928 10.9996C21.0799 11.1867 21.185 11.4405 21.185 11.7052ZM23.8893 12.703C23.9183 11.4625 23.4556 10.2608 22.602 9.36015C21.7061 8.49568 20.5039 8.02195 19.2591 8.04295C17.9619 7.98308 13.9704 7.98308 12.6731 8.04295C11.433 8.0161 10.2321 8.47853 9.33022 9.33022C8.47666 10.2309 8.01393 11.4326 8.04295 12.6731C7.98308 13.9704 7.98308 17.9619 8.04295 19.2591C8.01393 20.4997 8.47666 21.7013 9.33022 22.602C10.2321 23.4537 11.433 23.9161 12.6731 23.8893C13.9903 23.9691 17.9419 23.9691 19.2591 23.8893C20.4997 23.9183 21.7013 23.4556 22.602 22.602C23.4556 21.7013 23.9183 20.4997 23.8893 19.2591C23.9492 17.9619 23.9492 13.9704 23.8893 12.6731V12.703ZM22.1929 20.6861C22.0574 21.0293 21.8529 21.341 21.5919 21.6019C21.331 21.8628 21.0193 22.0674 20.6761 22.2029C19.127 22.5161 17.5433 22.6234 15.9661 22.5222C14.3922 22.6236 12.8118 22.5162 11.2661 22.2029C10.9229 22.0674 10.6112 21.8628 10.3503 21.6019C10.0893 21.341 9.88481 21.0293 9.74933 20.6861C9.33022 19.6283 9.42003 17.1336 9.42003 15.9761C9.42003 14.8186 9.33022 12.3139 9.74933 11.2661C9.88099 10.9195 10.0841 10.6045 10.3454 10.3414C10.6067 10.0784 10.9204 9.87328 11.2661 9.73935C12.8118 9.42599 14.3922 9.31862 15.9661 9.42003C17.5433 9.31879 19.127 9.42615 20.6761 9.73935C21.0193 9.87483 21.331 10.0794 21.5919 10.3403C21.8529 10.6012 22.0574 10.9129 22.1929 11.2561C22.612 12.3139 22.5122 14.8086 22.5122 15.9661C22.5122 17.1237 22.612 19.6283 22.1929 20.6761V20.6861Z"
-                    fill="white"
-                  />
+                    fill="white" />
                 </g>
                 <defs>
                   <clipPath id="clip0_9_821">
-                    <rect
-                      width="15.9661"
-                      height="15.9661"
-                      fill="white"
-                      transform="translate(7.9834 7.98315)"
-                    />
+                    <rect width="15.9661" height="15.9661" fill="white" transform="translate(7.9834 7.98315)" />
                   </clipPath>
                 </defs>
               </svg>
             </a>
             <a target="_blank" href="https://www.youtube.com/" class="youtube">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16 0C7.17675 0 0 7.17675 0 16C0 24.8232 7.17675 32 16 32C24.8232 32 32 24.8232 32 16C32 7.17675 24.8232 0 16 0ZM16 31C7.7655 31 1 24.2345 1 16C1 7.7655 7.7655 1 16 1C24.2345 1 31 7.7655 31 16C31 24.2345 24.2345 31 16 31Z"
-                  fill="white"
-                />
+                  fill="white" />
                 <g clip-path="url(#clip0_9_825)">
                   <path
                     d="M23.1771 12.2333C23.0961 11.9328 22.9378 11.6588 22.718 11.4384C22.4982 11.2181 22.2245 11.0592 21.9242 10.9775C20.8106 10.6717 16.3554 10.6668 16.3554 10.6668C16.3554 10.6668 11.901 10.6618 10.7867 10.954C10.4866 11.0395 10.2134 11.2006 9.99353 11.422C9.77362 11.6435 9.61431 11.9177 9.53091 12.2184C9.23722 13.332 9.23438 15.6417 9.23438 15.6417C9.23438 15.6417 9.23153 17.9628 9.52309 19.065C9.68664 19.6744 10.1666 20.1558 10.7768 20.3201C11.9018 20.6259 16.3448 20.6308 16.3448 20.6308C16.3448 20.6308 20.7999 20.6358 21.9135 20.3443C22.2139 20.2627 22.4879 20.1042 22.7083 19.8843C22.9286 19.6644 23.0878 19.3908 23.17 19.0906C23.4644 17.9777 23.4666 15.6687 23.4666 15.6687C23.4666 15.6687 23.4808 13.3469 23.1771 12.2333ZM14.9304 17.7814L14.9339 13.5148L18.6367 15.6516L14.9304 17.7814Z"
-                    fill="white"
-                  />
+                    fill="white" />
                 </g>
                 <defs>
                   <clipPath id="clip0_9_825">
-                    <rect
-                      width="14.9334"
-                      height="10.6667"
-                      fill="white"
-                      transform="translate(8.5332 10.6667)"
-                    />
+                    <rect width="14.9334" height="10.6667" fill="white" transform="translate(8.5332 10.6667)" />
                   </clipPath>
                 </defs>
               </svg>
+
             </a>
           </div>
         </div>
-        <div class="footer__open">
-          <h4 class="footer__open-heading">Giờ mở cửa</h4>
-          <p class="footer__open-desc">
-            <span>Thứ 2 – Thứ 6: </span> 7:00 giờ – 18:00 giờ
-          </p>
-          <p class="footer__open-desc">
-            <span>Thứ 7: </span> 7:00 giờ – 18:00 giờ
-          </p>
-          <p class="footer__open-desc">
-            <span>Chủ nhật: </span> 8:00 giờ – 18:00 giờ
-          </p>
+        <div class="footer__top-open">
+          <h4 class="heading">Giờ mở cửa</h4>
+          <p class="desc"><span>Thứ 2 – Thứ 6: </span> 7:00 giờ – 18:00 giờ </p>
+          <p class="desc"> <span>Thứ 7: </span> 7:00 giờ – 18:00 giờ </p>
+          <p class="desc"><span>Chủ nhật: </span> 8:00 giờ – 18:00 giờ </p>
         </div>
+
       </div>
-      <div class="footer__end">
+    </div>
+    <div class="footer__end pd">
+      <div class="container">
         <p class="footer__end-text">
           Copyright © 2022 Sunset Sorrento Restaurant. All Rights Reserved.
         </p>
       </div>
-    </footer>
-    <div class="backtotop">
-      <svg
-        width="50"
-        height="50"
-        viewBox="0 0 50 50"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M25 1C38.2597 1 49 11.7403 49 25C49 38.2597 38.2597 49 25 49C11.7403 49 1 38.2597 1 25C1 11.7403 11.7403 1 25 1Z"
-          stroke="#B68C2D"
-        />
-        <path
-          d="M25 16L25.3556 15.6485L25 15.2887L24.6444 15.6485L25 16ZM24.5 34.213V34.713L25.5 34.713V34.213L24.5 34.213ZM34.3556 24.755L25.3556 15.6485L24.6444 16.3515L33.6444 25.458L34.3556 24.755ZM24.6444 15.6485L15.6444 24.755L16.3556 25.458L25.3556 16.3515L24.6444 15.6485ZM24.5 16V34.213L25.5 34.213V16L24.5 16Z"
-          stroke="#B68C2D"
-        />
-      </svg>
     </div>
-  </body>
-  <script src="./dest/jsmain.min.js"></script>
-  <script src="./js/main.js"></script>
+  </footer>
+  <div class="backtotop">
+    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M25 1C38.2597 1 49 11.7403 49 25C49 38.2597 38.2597 49 25 49C11.7403 49 1 38.2597 1 25C1 11.7403 11.7403 1 25 1Z"
+        stroke="#B68C2D" />
+      <path
+        d="M25 16L25.3556 15.6485L25 15.2887L24.6444 15.6485L25 16ZM24.5 34.213V34.713L25.5 34.713V34.213L24.5 34.213ZM34.3556 24.755L25.3556 15.6485L24.6444 16.3515L33.6444 25.458L34.3556 24.755ZM24.6444 15.6485L15.6444 24.755L16.3556 25.458L25.3556 16.3515L24.6444 15.6485ZM24.5 16V34.213L25.5 34.213V16L24.5 16Z"
+        stroke="#B68C2D" />
+    </svg>
+  </div>
+</body>
+<script src="./dest/jsmain.min.js"></script>
+<script src="./dest/main.js"></script>
+
 </html>

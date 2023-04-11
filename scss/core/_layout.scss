@@ -1,207 +1,110 @@
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-rendering: optimizeSpeed;
-  text-rendering: optimizeSpeed;
+@-ms-viewport {
+    width: device-width;
 }
-
 * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  box-sizing: border-box;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    box-sizing: border-box;
 }
-
-html,
+html {
+    font-size: 62.5%; // => 10px = 1rem
+    scroll-behavior: smooth;
+}
 body {
-  width: 100%;
-  max-width: var(--body-width); // tùy
-  // font-size: 62.5%; // tuỳ thiết kế
-  font-size: var(--fz-body); // tùy
-  -webkit-font-smoothing: antialiased;
-  margin: auto;
-  background-color: var(--cl-body-bg);
-  scroll-behavior: smooth;
-  font-family: ol; // tuỳ thiết kế
-  color: #fff; // tuỳ thiết kế
-  @include custom-scrollbar();
-  .container {
     width: 100%;
-    max-width: var(--container-width);
-    padding-right: var(--gap-container);
-    padding-left: var(--gap-container);
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-  }
-  .container-fluid {
-    width: 100%;
-    max-width: var(--container-fluid-width);
-    padding-right: var(--gap-container-fluid);
-    padding-left: var(--gap-container-fluid);
-    margin-right: auto;
-    margin-left: auto;
-    position: relative;
-  }
-  @media (min-width: 2000px) {
-    max-width: unset;
-    .container {
-      max-width: 1900px;
-    }
-  }
-  @media (max-width: 1200px) {
-    .container {
-      max-width: 1200px;
-      padding: 0 32px;
-    }
-  }
-  @media (max-width: 992px) {
-    .container {
-      max-width: 960px;
-      padding: 0 26px;
-    }
-  }
-  @media (max-width: 768px) {
-    .container {
-      max-width: 720px;
-      padding: 0 20px;
-    }
-  }
-  @media (max-width: 576px) {
-    .container {
-      max-width: 540px;
-      padding: 0 15px;
-    }
-  }
-
-  main {
-    width: 100%;
+    max-width: var(--container-max-width);
     margin: auto;
-    overflow: hidden;
-
-    .rotate-180 {
-      transform: rotate(180deg);
+    @include text(mr, var(--fz-h6), var(--lh-h6), var(--cl-white), none, none); // tuỳ chỉnh
+    background-color: var(--cl-body-bg);
+    position: relative;
+    .container-fluid {
+        position: relative;
+        width: var(--container-fluid-width);
+        padding-right: var(--gap);
+        padding-left: var(--gap);
+        margin-right: auto;
+        margin-left: auto;
+        @include xs {
+            padding-right: calc(var(--gap) / 2);
+            padding-left: calc(var(--gap) / 2);
+        }
     }
-    .--active {
-      display: block;
+    .container {
+        position: relative;
+        width: 100%;
+        padding-right: calc(var(--gap) / 2);
+        padding-left: calc(var(--gap) / 2);
+        margin-right: auto;
+        margin-left: auto;
     }
-  }
-  // .mainwrapper {
-  //   width: 100%;
-  //   margin: auto;
-  //   @include visible;
-  // }
+    .pd {
+        padding: var(--pd-section) 0;
+    }
+    .pdB {
+        padding-bottom: var(--pd-section);
+    }
+    .pdT {
+        padding-top: var(--pd-section);
+    }
+    .mg {
+        margin: var(--mg-section) 0;
+    }
+    .mgB {
+        margin-bottom: var(--mg-section);
+    }
+    .mgT {
+        margin-top: var(--mg-section);
+    }
+    @media (min-width: $xxs-min) {
+        .container {
+            max-width: 540px;
+        }
+    }
+    @media (min-width: $xs-min) {
+        .container {
+            max-width: 720px;
+        }
+    }
+    @media (min-width: $sm-min) {
+        .container {
+            max-width: 960px;
+        }
+    }
+    @media (min-width: $md-min) {
+        .container {
+            max-width: var(--container-width);
+        }
+    }
+    @media (min-width: 1440px) {
+        .container {
+        }
+    }
+    .mainwrapper {
+        width: 100%;
+        margin: auto;
+        @include visible;
+    }
+    @include lg {
+        //1599
+        // CSS responsive large desktop
+    }
+    @include md {
+        //1199
+        // CSS responsive desktop
+    }
+    @include sm {
+        //991
+        // CSS responsive tablet
+    }
+    @include xs {
+        //767
+        // CSS responsive mobile
+    }
+    @include xxs {
+        //575
+        // CSS responsive small mobile
+    }
 }
-footer {
-  &.displaynone {
-    display: none;
-  }
-}
-section {
-  width: 100%;
-  &.displaynone {
-    display: none;
-  }
-  &.pdt-100 {
-    padding-top: 100px;
-  }
-  &.pdb-100 {
-    padding-bottom: 100px;
-  }
-  &.pd-100 {
-    padding: 100px 0;
-  }
-  &.mr-100 {
-    margin: 100px 0;
-  }
-  &.mrt-100 {
-    margin-top: 100px 0;
-  }
-  &.mrb-100 {
-    margin-bottom: 100px 0;
-  }
-
-  @include xs {
-    &.pdt-100 {
-      padding-top: 60px;
-    }
-    &.pdb-100 {
-      padding-bottom: 60px;
-    }
-    &.pd-100 {
-      padding: 60px 0;
-    }
-    &.mr-100 {
-      margin: 60px 0;
-    }
-    &.mrt-100 {
-      margin-top: 60px 0;
-    }
-    &.mrb-100 {
-      margin-bottom: 60px 0;
-    }
-  }
-  @include md {
-    &.pdt-100 {
-      padding-top: 60px;
-    }
-    &.pdb-100 {
-      padding-bottom: 60px;
-    }
-    &.pd-100 {
-      padding: 60px 0;
-    }
-    &.mr-100 {
-      margin: 60px 0;
-    }
-    &.mrt-100 {
-      margin-top: 60px 0;
-    }
-    &.mrb-100 {
-      margin-bottom: 60px 0;
-    }
-  }
-}
-
-// CSS responsive
-// @include lg {
-//   // CSS responsive large desktop
-// }
-// @include md {
-//   // CSS responsive desktop
-// }
-// @include sm {
-//   // CSS responsive tablet
-// }
-// @include xs {
-//   // CSS responsive mobile
-// }
-// @include xxs {
-//   //CSS responsive small mobile
-// }
-
-// @media (max-width: 576px) {
-//   .container {
-//     max-width: 540px;
-//   }
-// }
-// @media (max-width: 768px) {
-//   .container {
-//     max-width: 720px;
-//   }
-// }
-// @media (max-width: 992px) {
-//   .container {
-//     max-width: 960px;
-//   }
-// }
-// @media (max-width: 1200px) {
-//   .container {
-//     max-width: var(--container-width);
-
-//   }
-// }
