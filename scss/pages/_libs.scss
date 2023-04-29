@@ -1,206 +1,226 @@
 .main__libs {
-    // hero
-    .hero {
-        height: 100vh;
+  // hero
+  .hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    margin-top: var(--header-height);
+    max-height: 500px;
+    background: url(../img/libs-banner.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    .container {
+      height: 100%;
+    }
+    &__img {
+      width: 100%;
+      height: 100%;
+      img {
         width: 100%;
-        position: relative;
-        margin-top: var(--header-height);
-        max-height: 500px;
-        background: url(../img/libs-banner.jpg) no-repeat;
-        background-position: center;
-        background-size: cover;
-        .container {
-            height: 100%;
-        }
-        &__img {
-            width: 100%;
-            height: 100%;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-        }
-        @media screen and (max-width: 1024px) {
-            height: 50vh;
-        }
-        @include xs {
-            --fz-h2: 3.4rem;
-            --fz-h5: 2.4rem;
-            .textbox__archon {
-                flex-direction: column;
-                justify-content: center;
-                &-heading {
-                    padding-left: 0;
-                }
-                &-click {
-                    padding-right: 0;
-                    margin-top: 30px;
-                }
-            }
-        }
-        @include xxs {
-            --header-height: 60px;
-        }
+        height: 100%;
+        object-fit: cover;
+      }
     }
-    .libs {
-        .btn__main {
-            margin: 0 auto;
-            margin-top: 80px;
-        }
-        &__tabs {
-            @include mid;
-            position: relative;
-            width: max-content;
-            margin: 0 auto;
-            margin-bottom: 50px;
-            &::after {
-                content: '';
-                width: 100%;
-                height: 1px;
-                background-color: var(--cl-primary);
-                position: absolute;
-                bottom: -5px;
-            }
-            &-item {
-                display: block;
-                @include text(ol, var(--fz-h5), 30px, #909090, none, uppercase);
-                @include transition;
-                cursor: pointer;
-                position: relative;
-                &.active {
-                    @include transition;
-                    &::after {
-                        @include visible(1);
-                    }
-                }
-                &:hover {
-                    color: var(--cl-white);
-                }
-                &:not(:nth-child(5)) {
-                    margin-right: 24px;
-                }
-                &::after {
-                    content: '';
-                    width: 100%;
-                    height: 2px;
-                    background-color: var(--cl-primary);
-                    position: absolute;
-                    bottom: -5.8px;
-                    left: 0;
-                    @include visible(0);
-                    @include transition;
-                }
-            }
-        }
-        &__list {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            display: none;
-            @include transition;
-            &.active {
-                display: grid;
-                @include transition;
-            }
-            &-item {
-                display: block;
-                height: 0;
-                padding-bottom: 117.1875%;
-                overflow: hidden;
-                position: relative;
-                &:hover {
-                    &::after {
-                        opacity: 0.75;
-                        visibility: visible;
-                    }
-                    & .text {
-                        transform: translate(-50%, -50%);
-                        opacity: 1;
-                        visibility: visible;
-                    }
-                }
-                img {
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                    position: absolute;
-                }
-                &::after {
-                    content: '';
-                    height: 100%;
-                    width: 100%;
-                    @include mid(false);
-                    background-color: #0c1013;
-                    opacity: 0;
-                    visibility: hidden;
-                    z-index: 1;
-                    @include transition;
-                }
-                .text {
-                    @include mid(false);
-                    @include mid;
-                    width: 100%;
-                    flex-direction: column;
-                    z-index: 2;
-                    transform: translate(-50%, 20%);
-                    opacity: 0;
-                    visibility: hidden;
-                    @include transition;
-                    text-align: center;
-                    &__heading {
-                        @include text(ci, var(--fz-h2), var(--lh-h2), var(--cl-white), none, none);
-                    }
-                    &__desc {
-                        @include text(ol, var(--fz-h3), var(--lh-h3), var(--cl-primary), none, none);
-                    }
-                }
-            }
-        }
-        @include md {
-            &__list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @include xs {
-            &__list {
-                gap: 12px;
-            }
-        }
+    @media screen and (max-width: 1024px) {
+      height: 50vh;
     }
-}
-.backtotop {
-    display: flex;
-    height: 45px;
-    width: 45px;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    border-radius: 50%;
-    @include transform(translate(50px, -30px));
-    @include transform-origin(left);
-    @include transition;
-    svg {
-        @include transition;
-        path {
-            @include transition;
+    @include xs {
+      --fz-h2: 3.4rem;
+      --fz-h5: 2.4rem;
+      .textbox__archon {
+        flex-direction: column;
+        justify-content: center;
+        &-heading {
+          padding-left: 0;
         }
-    }
-    &:hover {
-        svg {
-            path {
-                stroke: white;
-            }
+        &-click {
+          padding-right: 0;
+          margin-top: 30px;
         }
+      }
     }
-    &.active {
-        opacity: 1;
-        visibility: visible;
-        @include transform(translate(0, -30px));
+    @include xxs {
+      --header-height: 60px;
+    }
+  }
+  .libs {
+    .btn__main {
+      margin: 0 auto;
+      margin-top: 80px;
+    }
+    &__tabs {
+      @include mid;
+      position: relative;
+      width: max-content;
+      margin: 0 auto;
+      margin-bottom: 50px;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: var(--cl-primary);
+        position: absolute;
+        bottom: -5px;
+      }
+      &-item {
+        display: block;
+        @include text(ol, var(--fz-h5), 30px, #909090, none, uppercase);
         @include transition;
         cursor: pointer;
+        position: relative;
+        &.active {
+          @include transition;
+          &::after {
+            @include visible(1);
+          }
+        }
+        &:hover {
+          color: var(--cl-white);
+        }
+        &:not(:nth-child(5)) {
+          margin-right: 24px;
+        }
+        &::after {
+          content: '';
+          width: 100%;
+          height: 2px;
+          background-color: var(--cl-primary);
+          position: absolute;
+          bottom: -5.8px;
+          left: 0;
+          @include visible(0);
+          @include transition;
+        }
+      }
     }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      display: none;
+      @include transition;
+      &.active {
+        display: grid;
+        @include transition;
+      }
+      &-item {
+        display: block;
+        height: 0;
+        padding-bottom: 117.1875%;
+        overflow: hidden;
+        position: relative;
+        &:hover {
+          &::after {
+            opacity: 0.75;
+            visibility: visible;
+          }
+          & .text {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          position: absolute;
+        }
+        &::after {
+          content: '';
+          height: 100%;
+          width: 100%;
+          @include mid(false);
+          background-color: #0c1013;
+          opacity: 0;
+          visibility: hidden;
+          z-index: 1;
+          @include transition;
+        }
+        .text {
+          @include mid(false);
+          @include mid;
+          width: 100%;
+          flex-direction: column;
+          z-index: 2;
+          transform: translate(-50%, 20%);
+          opacity: 0;
+          visibility: hidden;
+          @include transition;
+          text-align: center;
+          &__heading {
+            @include text(ci, var(--fz-h2), var(--lh-h2), var(--cl-white), none, none);
+          }
+          &__desc {
+            @include text(ol, var(--fz-h3), var(--lh-h3), var(--cl-primary), none, none);
+          }
+        }
+      }
+    }
+    @include md {
+      &__list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @include xs {
+      &__list {
+        gap: 12px;
+      }
+    }
+  }
+}
+.backtotop {
+  position: fixed;
+  z-index: 50;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  bottom: 90px;
+  right: 40px;
+  cursor: pointer;
+  @include transform(translateX(200%));
+  @include visible(0);
+  @include transition;
+  &::before {
+    content: '';
+    display: block;
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
+    border-radius: 50%;
+    background: #000000;
+    @include mid;
+    @include mid(false);
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%) scaleX(1));
+    @include transition;
+  }
+  &:hover {
+    img {
+      @include transform(translate(-50%, -50%) scaleX(0.75));
+    }
+  }
+  &.active {
+    @include transform(translateX(0));
+    @include visible(1);
+  }
+  @include xs {
+    width: 46px;
+    height: 46px;
+    bottom: 40px;
+    right: 30px;
+  }
+}
+.processbar {
+  width: 0;
+  height: 3px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1100;
+  background: var(--cl-primary);
 }

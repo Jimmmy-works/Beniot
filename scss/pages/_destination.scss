@@ -1,212 +1,223 @@
 .main__destination {
-    .hero {
-        height: 100vh;
+  .hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    margin-top: var(--header-height);
+    max-height: 500px;
+    background: url(../img/destination-banner.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    .container {
+      height: 100%;
+    }
+    &__img {
+      width: 100%;
+      height: 100%;
+      img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    @media screen and (max-width: 1024px) {
+      height: 50vh;
+    }
+    @include xs {
+      --fz-h2: 3.4rem;
+      --fz-h5: 2.4rem;
+      .textbox__archon {
+        flex-direction: column;
+        justify-content: center;
+        &-heading {
+          padding-left: 0;
+        }
+        &-click {
+          padding-right: 0;
+          margin-top: 30px;
+        }
+      }
+    }
+    @include xxs {
+      --header-height: 60px;
+    }
+  }
+  .destination {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: auto;
+      gap: 24px;
+      &-item {
+        display: block;
+        overflow: hidden;
         position: relative;
-        margin-top: var(--header-height);
-        max-height: 500px;
-        background: url(../img/destination-banner.jpg) no-repeat;
-        background-position: center;
-        background-size: cover;
-        .container {
-            height: 100%;
+        z-index: 0;
+        img {
+          @include midimg(100%);
+          @include transform(scale(1));
+          @include transition;
         }
-        &__img {
-            width: 100%;
-            height: 100%;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+        .text {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          text-align: center;
+          @include transform(translate(-50%, 100%));
+          @include text(ol, 4rem, 6rem, var(--cl-white), none, capitalize);
+          z-index: 5;
+          @include visible(0);
+          @include transition;
         }
-        @media screen and (max-width: 1024px) {
-            height: 50vh;
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba($color: #000000, $alpha: 0);
+          z-index: 1;
+          @include transition;
         }
-        @include xs {
-            --fz-h2: 3.4rem;
-            --fz-h5: 2.4rem;
-            .textbox__archon {
-                flex-direction: column;
-                justify-content: center;
-                &-heading {
-                    padding-left: 0;
-                }
-                &-click {
-                    padding-right: 0;
-                    margin-top: 30px;
-                }
-            }
+        &:hover {
+          img {
+            @include transform(scale(1.1));
+            @include transition;
+          }
+          &::before {
+            background-color: rgba($color: #000000, $alpha: 0.4);
+            @include transition;
+          }
+          .text {
+            @include visible(1);
+            @include transform(translate(-50%, -50%));
+          }
         }
-        @include xxs {
-            --header-height: 60px;
+        &:nth-child(1) {
+          grid-area: 1/1/3/3;
         }
+        &:nth-child(2) {
+          grid-area: 1/3/3/4;
+        }
+        &:nth-child(5) {
+          grid-area: 3/1/5/2;
+        }
+        &:nth-child(7) {
+          grid-area: 4/2/5/3;
+        }
+        &:nth-child(8) {
+          grid-area: 3/3/5/5;
+        }
+      }
     }
-    .destination {
+    .btn__main {
+      margin: 0 auto;
+      margin-top: 80px;
+    }
+    @media (min-width: 1600px) {
+      .container {
+        max-width: 100%;
+      }
+    }
+    @include xs {
+      @include xs {
         &__list {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: auto;
-            gap: 24px;
-            &-item {
-                display: block;
-                overflow: hidden;
-                position: relative;
-                z-index: 0;
-                img {
-                    @include midimg(100%);
-                    @include transform(scale(1));
-                    @include transition;
-                }
-                .text {
-                    width: 100%;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    text-align: center;
-                    @include transform(translate(-50%, 100%));
-                    @include text(ol, 4rem, 6rem, var(--cl-white), none, capitalize);
-                    z-index: 5;
-                    @include visible(0);
-                    @include transition;
-                }
-                &::before {
-                    content: '';
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    background-color: rgba($color: #000000, $alpha: 0);
-                    z-index: 1;
-                    @include transition;
-                }
-                &:hover {
-                    img {
-                        @include transform(scale(1.1));
-                        @include transition;
-                    }
-                    &::before {
-                        background-color: rgba($color: #000000, $alpha: 0.4);
-                        @include transition;
-                    }
-                    .text {
-                        @include visible(1);
-                        @include transform(translate(-50%, -50%));
-                    }
-                }
-                &:nth-child(1) {
-                    grid-area: 1/1/3/3;
-                }
-                &:nth-child(2) {
-                    grid-area: 1/3/3/4;
-                }
-                &:nth-child(5) {
-                    grid-area: 3/1/5/2;
-                }
-                &:nth-child(7) {
-                    grid-area: 4/2/5/3;
-                }
-                &:nth-child(8) {
-                    grid-area: 3/3/5/5;
-                }
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          &-item {
+            &:nth-child(1) {
+              grid-area: 1/1/3/3;
             }
-        }
-        .btn__main {
-            margin: 0 auto;
-            margin-top: 80px;
-        }
-        @media (min-width: 1600px) {
-            .container {
-                max-width: 100%;
+            &:nth-child(2) {
+              grid-area: 5/1/6/2;
             }
-        }
-        @include xs {
-            @include xs {
-                &__list {
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    &-item {
-                        &:nth-child(1) {
-                            grid-area: 1/1/3/3;
-                        }
-                        &:nth-child(2) {
-                            grid-area: 5/1/6/2;
-                        }
-                        &:nth-child(5) {
-                            grid-area: 5/2/6/3;
-                        }
-                        &:nth-child(4) {
-                            grid-area: 3/1/5/2;
-                        }
-                        &:nth-child(3) {
-                            grid-area: 3/2/5/3;
-                        }
-                        &:nth-child(6) {
-                            grid-area: 6/1/7/2;
-                        }
-                        &:nth-child(7) {
-                            grid-area: 6/2/7/3;
-                        }
-                        &:nth-child(8) {
-                            grid-area: 7/1/9/3;
-                        }
-                    }
-                }
-                .btn {
-                    margin-top: 50px;
-                }
+            &:nth-child(5) {
+              grid-area: 5/2/6/3;
             }
-        }
-        @include xxs {
-            &__list {
-                gap: 12px;
+            &:nth-child(4) {
+              grid-area: 3/1/5/2;
             }
+            &:nth-child(3) {
+              grid-area: 3/2/5/3;
+            }
+            &:nth-child(6) {
+              grid-area: 6/1/7/2;
+            }
+            &:nth-child(7) {
+              grid-area: 6/2/7/3;
+            }
+            &:nth-child(8) {
+              grid-area: 7/1/9/3;
+            }
+          }
         }
+        .btn {
+          margin-top: 50px;
+        }
+      }
     }
+    @include xxs {
+      &__list {
+        gap: 12px;
+      }
+    }
+  }
 }
 .backtotop {
-    display: flex;
-    height: 45px;
-    width: 45px;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
+  position: fixed;
+  z-index: 50;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  bottom: 90px;
+  right: 40px;
+  cursor: pointer;
+  @include transform(translateX(200%));
+  @include visible(0);
+  @include transition;
+  &::before {
+    content: '';
+    display: block;
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
     border-radius: 50%;
-    @include transform(translate(50px, -30px));
-    @include transform-origin(left);
+    background: #000000;
+    @include mid;
+    @include mid(false);
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%) scaleX(1));
     @include transition;
-    svg {
-        @include transition;
-        path {
-            @include transition;
-        }
+  }
+  &:hover {
+    img {
+      @include transform(translate(-50%, -50%) scaleX(0.75));
     }
-    &:hover {
-        svg {
-            path {
-                stroke: white;
-            }
-        }
-    }
-    &.active {
-        opacity: 1;
-        visibility: visible;
-        @include transform(translate(0, -30px));
-        @include transition;
-        cursor: pointer;
-    }
+  }
+  &.active {
+    @include transform(translateX(0));
+    @include visible(1);
+  }
+  @include xs {
+    width: 46px;
+    height: 46px;
+    bottom: 40px;
+    right: 30px;
+  }
 }
 .processbar {
-    width: 0;
-    height: 3px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1100;
-    background: var(--cl-primary);
+  width: 0;
+  height: 3px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1100;
+  background: var(--cl-primary);
 }

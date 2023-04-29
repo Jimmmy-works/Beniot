@@ -10,12 +10,12 @@
     opacity: 1;
     visibility: visible;
     --gap: 60px;
-
     .container {
         height: 100%;
         position: relative;
         @include mid;
         justify-content: space-between;
+        max-width: 100%;
     }
 
     .btn__hamberger {
@@ -75,6 +75,13 @@
             align-items: center;
             flex-direction: row-reverse;
             gap: 8px;
+            &:hover {
+                svg {
+                    path {
+                        stroke: var(--cl-primary);
+                    }
+                }
+            }
             &.active {
                 svg {
                     transform: rotate(-180deg);
@@ -83,7 +90,6 @@
                     }
                 }
                 .menulist {
-                    transform: translateY(0);
                     @include visible(1);
                 }
             }
@@ -100,7 +106,7 @@
             }
             .menulist {
                 position: absolute;
-                top: 99%;
+                top: 100%;
                 left: -27%;
                 height: 130%;
                 width: 130%;
@@ -108,8 +114,8 @@
                 flex-direction: column;
                 border: 1px solid var(--cl-primary);
                 background-color: var(--cl-header);
-                transform: translateY(-50%);
                 @include visible(0);
+                overflow: hidden;
                 @include transition;
                 &__item {
                     height: 100%;
@@ -126,67 +132,85 @@
             }
         }
     }
-
-    .language {
+    .right {
+        @include mid;
         height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        position: absolute;
-        right: 188px;
-        padding: 20px;
-        @include transition;
-        &.active {
-            @include transition;
-            .language__list {
-                @include visible(1);
-                transform: translateY(0);
-                @include transition;
-            }
-        }
-        &__img {
-            margin-left: 5px;
-            & img {
-                object-fit: contain;
-            }
-        }
-        &__current {
-            @include text(ol, var(--fz-h6), var(--lh-h6), var(--cl-white), none, uppercase);
-        }
-        &__list {
-            width: 100%;
+        .language {
             height: 100%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-direction: column;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            text-align: center;
-            @include visible(0);
-            transform: translateY(-50%);
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
             @include transition;
-            &-item {
-                width: 100%;
-                height: 100%;
-                background-color: rgba($color: #fff, $alpha: 0.5);
-                @include mid;
+            &:hover {
+                .language__current {
+                    color: var(--cl-primary);
+                }
+            }
+            &.active {
                 @include transition;
-                @include text(ol, var(--fz-h6), var(--lh-h6), var(--cl-white), none, uppercase);
-                a {
-                    display: block;
-                    @include text(ol, var(--fz-h6), var(--lh-h6), var(--cl-white), none, uppercase);
+                .language__list {
+                    @include visible(1);
                     @include transition;
                 }
-                &:hover {
-                    background-color: var(--cl-primary);
-                    & a {
-                        color: var(--cl-white);
+                .language__img {
+                    transform: rotate(-180deg);
+                }
+            }
+            &__img {
+                margin-left: 5px;
+                @include mid;
+                transform: rotate(0);
+                @include transition;
+                width: 12px;
+                height: 12px;
+                img {
+                    object-fit: contain;
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+            &__current {
+                @include text(ol, var(--fz-h6), var(--lh-h6), var(--cl-white), none, uppercase);
+                @include transition;
+            }
+            &__list {
+                width: 300%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: -120%;
+                text-align: center;
+                @include transition;
+                @include visible(0);
+                &-item {
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($color: #fff, $alpha: 0.5);
+                    @include mid;
+                    @include transition;
+                    @include text(ol, var(--fz-h6), var(--lh-h6), var(--cl-white), none, uppercase);
+                    a {
+                        display: block;
+                        @include text(ol, var(--fz-h6), var(--lh-h6), var(--cl-white), none, uppercase);
+                        @include transition;
+                    }
+                    &:hover {
+                        background-color: var(--cl-primary);
+                        & a {
+                            color: var(--cl-white);
+                        }
                     }
                 }
             }
+        }
+        .btn__reverse {
+            margin-left: 20px;
         }
     }
     @include md {
@@ -204,8 +228,9 @@
         }
     }
     @include sm {
-        .menu {
-            display: none;
+        .container {
+            .btn__reverse {
+            }
         }
     }
     @include xs {
@@ -232,13 +257,18 @@
     }
     @include xxs {
         height: 60px;
-        .container {
-            padding-left: 30px;
-            padding-right: 15px;
-        }
-
-        .menu {
-            display: none;
+        .right {
+            .language {
+                &__list {
+                    top: 125%;
+                }
+                &__img {
+                    img {
+                        width: 8px;
+                        height: 8px;
+                    }
+                }
+            }
         }
         .logo {
             max-width: 130px;
@@ -248,63 +278,7 @@
             height: 20px;
             width: 20px;
             span + span {
-                margin-top: 3.5px;
-            }
-        }
-        @keyframes top {
-            0% {
-                top: 0;
-                transform: rotate(0);
-            }
-            50% {
-                top: 5px;
-                transform: rotate(0);
-            }
-            100% {
-                top: 5px;
-                transform: rotate(45deg);
-            }
-        }
-        @keyframes top-2 {
-            0% {
-                top: 5px;
-                transform: rotate(45deg);
-            }
-            50% {
-                top: 5px;
-                transform: rotate(0deg);
-            }
-            100% {
-                top: 0;
-                transform: rotate(0deg);
-            }
-        }
-        @keyframes bottom {
-            0% {
-                bottom: 0;
-                transform: rotate(0);
-            }
-            50% {
-                bottom: 6px;
-                transform: rotate(0);
-            }
-            100% {
-                bottom: 6px;
-                transform: rotate(135deg);
-            }
-        }
-        @keyframes bottom-2 {
-            0% {
-                bottom: 6px;
-                transform: rotate(135deg);
-            }
-            50% {
-                bottom: 6px;
-                transform: rotate(0);
-            }
-            100% {
-                bottom: 0;
-                transform: rotate(0);
+                margin-top: 4.5px;
             }
         }
     }

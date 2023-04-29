@@ -8,6 +8,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     box-sizing: border-box;
+    @include custom-scrollbar();
 }
 html {
     font-size: 62.5%; // => 10px = 1rem

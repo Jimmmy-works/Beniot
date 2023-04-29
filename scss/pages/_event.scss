@@ -1,109 +1,129 @@
 .main__event {
-    .hero {
-        height: 100vh;
-        width: 100%;
-        position: relative;
-        margin-top: var(--header-height);
-        max-height: 500px;
-        background: url(../img/event-banner.jpg) no-repeat;
-        background-position: center;
-        background-size: cover;
-        .container {
-            height: 100%;
-        }
-        @media screen and (max-width: 1024px) {
-            height: 50vh;
-        }
-        @include xs {
-            .textbox__archon {
-                flex-direction: column;
-                justify-content: center;
-                &-heading {
-                    padding-left: 0;
-                }
-                &-click {
-                    padding-right: 0;
-                    margin-top: 30px;
-                    & .prevHome {
-                    }
-                    & .nextService {
-                    }
-                }
-            }
-        }
-        @include xxs {
-            --header-height: 60px;
-        }
+  .hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    margin-top: var(--header-height);
+    max-height: 500px;
+    background: url(../img/event-banner.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    .container {
+      height: 100%;
     }
-    .mymenu {
-        .flexauto {
-            &__wrap {
-                flex-wrap: wrap;
-            }
-        }
-        .btn__main {
-            margin: 0 auto;
-            margin-top: 65px;
-        }
-        @include sm {
-            .flexauto {
-                &__wrap {
-                    &-item {
-                        margin-right: unset;
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-        @include xs {
-            .flexauto {
-                --fz-h3: 1.8rem;
-                --item: 2;
-                &__wrap {
-                    &-item {
-                        .content {
-                            padding-left: 24px;
-                            padding-right: 24px;
-                        }
-                    }
-                }
-            }
-        }
+    @media screen and (max-width: 1024px) {
+      height: 50vh;
     }
+    @include xs {
+      .textbox__archon {
+        flex-direction: column;
+        justify-content: center;
+        &-heading {
+          padding-left: 0;
+        }
+        &-click {
+          padding-right: 0;
+          margin-top: 30px;
+          & .prevHome {
+          }
+          & .nextService {
+          }
+        }
+      }
+    }
+    @include xxs {
+      --header-height: 60px;
+    }
+  }
+  .mymenu {
+    .flexauto {
+      &__wrap {
+        flex-wrap: wrap;
+      }
+    }
+    .btn__main {
+      margin: 0 auto;
+      margin-top: 65px;
+    }
+    @include sm {
+      .flexauto {
+        &__wrap {
+          &-item {
+            margin-right: unset;
+            opacity: 1;
+          }
+        }
+      }
+    }
+    @include xs {
+      .flexauto {
+        --fz-h3: 1.8rem;
+        --item: 2;
+        &__wrap {
+          &-item {
+            .content {
+              padding-left: 24px;
+              padding-right: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .backtotop {
-    display: flex;
-    height: 45px;
-    width: 45px;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
+  position: fixed;
+  z-index: 50;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  bottom: 90px;
+  right: 40px;
+  cursor: pointer;
+  @include transform(translateX(200%));
+  @include visible(0);
+  @include transition;
+  &::before {
+    content: '';
+    display: block;
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
     border-radius: 50%;
-    @include transform(translate(50px, -30px));
-    @include transform-origin(left);
+    background: #000000;
+    @include mid;
+    @include mid(false);
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%) scaleX(1));
     @include transition;
-    svg {
-        @include transition;
-        path {
-            @include transition;
-        }
+  }
+  &:hover {
+    img {
+      @include transform(translate(-50%, -50%) scaleX(0.75));
     }
-    &:hover {
-        svg {
-            path {
-                stroke: white;
-            }
-        }
-    }
-    &.active {
-        opacity: 1;
-        visibility: visible;
-        @include transform(translate(0, -30px));
-        @include transition;
-        cursor: pointer;
-    }
+  }
+  &.active {
+    @include transform(translateX(0));
+    @include visible(1);
+  }
+  @include xs {
+    width: 46px;
+    height: 46px;
+    bottom: 40px;
+    right: 30px;
+  }
+}
+.processbar {
+  width: 0;
+  height: 3px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1100;
+  background: var(--cl-primary);
 }

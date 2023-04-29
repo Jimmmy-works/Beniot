@@ -110,20 +110,31 @@
 
 <body>
   <div class="loading">
-    <div class="ring">Loading
-      <span></span>
+    <div class="loader">
+      <div class="loader__logo"><img src="./img/logomain.svg" alt=""></div>
+      <div class="loader__progress"><span></span></div>
+      <div class="loader__number"><span>0</span></div>
     </div>
   </div>
   <div class="processbar"></div>
   <nav class="nav">
     <div class="nav__inner">
+      <div class="btn__hamberger not-active">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <ul class="nav__inner-list">
+        <a href="./index.html" class="logo">
+          <img src="./img/logo-group.svg" alt="" />
+        </a>
         <li class="item"> <a href="./index.html">TRANG CHỦ</a></li>
         <li class="item"><a href="./about.html">VỀ CHÚNG TÔI</a></li>
         <li class="item"><a href="./service.html">DỊCH VỤ</a></li>
         <li class="item"><a href="./event.html">SỰ KIỆN</a></li>
         <li class="item submenunav ">
-          <a>THỰC ĐƠN
+          <a>
+            <span>THỰC ĐƠN</span>
             <div class=" img">
               <svg width="10" height="10" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M13 1L7 7L1 1" stroke="white" />
@@ -140,7 +151,7 @@
         <li class="item"><a href="./destination.html">ĐIỂM ĐẾN</a></li>
         <li class="item"><a href="./libs.html">THƯ VIỆN</a></li>
         <li class="item"><a href="./contact.html">LIÊN HỆ</a></li>
-        <button class="btn__reverse">ĐẶT BÀN</button>
+        <button class="btn__reverse ">ĐẶT BÀN</button>
       </ul>
     </div>
   </nav>
@@ -154,6 +165,7 @@
       <a href="./index.html" class="logo">
         <img src="./img/logo-group.svg" alt="" />
       </a>
+
       <ul class="menu">
         <li class="menu__item">
           <a href="./index.html">TRANG CHỦ</a>
@@ -190,23 +202,24 @@
           <a href="./contact.html">LIÊN HỆ</a>
         </li>
       </ul>
-
-      <div class="language">
-        <span class="language__current">EN</span>
-        <div class="language__img">
-          <img srcset="./img/logo-down-@2x.png 2x" alt="" />
+      <div class="right">
+        <div class="language">
+          <span class="language__current">EN</span>
+          <div class="language__img">
+            <img srcset="./img/logo-down-@2x.png 2x" alt="" />
+          </div>
+          <ul class="language__list">
+            <li class="language__list-item"><a href="">VN</a></li>
+            <li class="language__list-item"><a href="">JAP</a></li>
+            <li class="language__list-item"><a href="">CHI</a></li>
+          </ul>
         </div>
-        <ul class="language__list">
-          <li class="language__list-item"><a href="">VN</a></li>
-          <li class="language__list-item"><a href="">JAP</a></li>
-          <li class="language__list-item"><a href="">CHI</a></li>
-        </ul>
+        <button class="btn__reverse ">ĐẶT BÀN</button>
       </div>
-      <button class="btn__reverse">ĐẶT BÀN</button>
     </div>
   </header>
   <main class="main__event">
-    <section class="hero">
+    <section class="hero myparoller">
       <div class="container">
         <div class="textbox__archon">
           <h3 class="textbox__archon-heading">SỰ KIỆN</h3>
@@ -503,15 +516,7 @@
     </div>
   </footer>
   <div class="backtotop">
-    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M25 1C38.2597 1 49 11.7403 49 25C49 38.2597 38.2597 49 25 49C11.7403 49 1 38.2597 1 25C1 11.7403 11.7403 1 25 1Z"
-        stroke="#B68C2D" />
-      <path
-        d="M25 16L25.3556 15.6485L25 15.2887L24.6444 15.6485L25 16ZM24.5 34.213V34.713L25.5 34.713V34.213L24.5 34.213ZM34.3556 24.755L25.3556 15.6485L24.6444 16.3515L33.6444 25.458L34.3556 24.755ZM24.6444 15.6485L15.6444 24.755L16.3556 25.458L25.3556 16.3515L24.6444 15.6485ZM24.5 16V34.213L25.5 34.213V16L24.5 16Z"
-        stroke="#B68C2D" />
-    </svg>
-
+    <img src="img/btTop.svg" alt="">
   </div>
 </body>
 <script src="./dest/jsmain.min.js"></script>
