@@ -9,7 +9,6 @@
 @import './core/layout';
 @import './core/components';
 @import './core/elements';
-@import './core/loading';
 
 //  Nav , header, footer
 @import './core/header';
@@ -31,3 +30,4 @@
 @import './pages/menu-detail-eu';
 @import './pages/destination-detail';
 @import './pages/freshproduct';
+@import './core/loading';

@@ -100,7 +100,7 @@ function handleProcessBar() {
 }
 //Handle Back to top ----------------------------------------------------//
 const backToTop = document.querySelector(".backtotop");
-const sectionShow = document.querySelector(".main__home .hero")
+const sectionShow = document.querySelector(" .hero")
 function handleBackToTop() {
   window.addEventListener("scroll", function () {
     function percentBorder() {
@@ -306,7 +306,6 @@ function handleReviewSlider() {
 function handleBrand() {
   const brand = document.querySelector(".main__home .brand");
   if (document.contains(brand) === true ) {
-    let widthWindow = window.innerWidth;
       var brandSlider = document.querySelector(".brand .brand__list");
       var flktBrandSlider = new Flickity(brandSlider, {
         // options
@@ -318,10 +317,25 @@ function handleBrand() {
         prevNextButtons: false,
         pageDots: false,
         pauseAutoPlayOnHover: true,
-        freeScroll: true,
+        freeScroll: false,
       });
     window.addEventListener("resize",function(){
-      if(widthWindow < 576){
+      let widthWindow = window.innerWidth;
+      if(widthWindow > 300){
+        var brandSlider = document.querySelector(".brand .brand__list");
+        var flktBrandSlider = new Flickity(brandSlider, {
+          // options
+          cellAlign: "left",
+          contain: true,
+          wrapAround: true,
+          draggable: ">1",
+          prevNextButtons: false,
+          prevNextButtons: false,
+          pageDots: false,
+          pauseAutoPlayOnHover: true,
+          freeScroll: false,
+        });
+      } else{
         var brandSlider = document.querySelector(".brand .brand__list");
         var flktBrandSlider = new Flickity(brandSlider, {
           // options
@@ -519,15 +533,14 @@ function handleOurService() {
   if (document.contains(sectionOurService) === true) {
     var ourservice = document.querySelector(".ourservice .ourservice__list");
     var flktyOurService = new Flickity(ourservice, {
-      // options
-      cellAlign: "center",
-      contain: true,
-      lazyLoad: 1,
-      wrapAround: true,
-      draggable: ">1",
-      prevNextButtons: false,
-      pageDots: true,
-      freeScroll: true,
+    // options
+    cellAlign: "center",
+    contain: true,
+    wrapAround: true,
+    draggable: ">1",
+    prevNextButtons: false,
+    pageDots: true,
+    freeScroll: false,
     });
     window.addEventListener("resize", function(){
       if(widthWindow <= 768){
@@ -536,7 +549,6 @@ function handleOurService() {
         // options
         cellAlign: "center",
         contain: true,
-        lazyLoad: 1,
         wrapAround: true,
         draggable: ">1",
         prevNextButtons: false,
@@ -554,7 +566,7 @@ function handleOurService() {
         draggable: ">1",
         prevNextButtons: false,
         pageDots: true,
-        freeScroll: true,
+        freeScroll: false,
       });
       }
     })
@@ -710,7 +722,34 @@ function counter() {
 //Handle Slider
 function mainEventDetaiPost(){
   let mainEventDetaiPost = document.querySelector(".main__event-detail .reading .reading__main .reading__main-post");
+  let widthWindow = window.innerWidth;
   if (document.contains(mainEventDetaiPost)=== true ){
+    if(widthWindow < 576){
+      var mainEventDetaiPostList = document.querySelector(
+        ".main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap"  )
+        var flktmainEventDetaiPost = new Flickity(
+          mainEventDetaiPostList,
+          {
+            // options
+            cellAlign: "left",
+            contain: true,
+            wrapAround: true,
+            draggable: ">1",
+            prevNextButtons: false,
+            prevNextButtons: false,
+            pageDots: false,
+            freeScroll: false,
+          }
+        );
+    } else{
+      var mainEventDetaiPostList = document.querySelector(
+        ".main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap"  );
+        var flktmainEventDetaiPost = new Flickity(
+          mainEventDetaiPostList,
+          { }
+          );
+          flktmainEventDetaiPost.destroy();
+    }
     window.addEventListener("resize",function(){
       let widthWindow = window.innerWidth;
       if(widthWindow < 576){
@@ -739,7 +778,6 @@ function mainEventDetaiPost(){
             );
             flktmainEventDetaiPost.destroy();
       }
-      
     })
   }
 }
@@ -748,6 +786,36 @@ function mainEventDetaiPost(){
 function mainDestinationDetailSlider() {
   let mainDestinationDetail = document.querySelector(".main__destination-detail .reading ");
   if (document.contains(mainDestinationDetail) === true) {
+    let widthWindow = window.innerWidth
+    if(widthWindow < 576){
+      var mainDestinationDetailList = document.querySelector(
+        ".main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap"
+      );
+      var flktmainDestinationDetail = new Flickity(mainDestinationDetailList, {
+        // options
+        cellAlign: "left",
+        contain: true,
+        draggable: ">1",
+        wrapAround: true,
+        pageDots: false,
+        prevNextButtons: false,
+
+      });
+    } else{
+      var mainDestinationDetailList = document.querySelector(
+        ".main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap"
+      );
+      var flktmainDestinationDetail = new Flickity(mainDestinationDetailList, {
+        // options
+        cellAlign: "left",
+        contain: true,
+        draggable: ">1",
+        wrapAround: false,
+        pageDots: false,
+        prevNextButtons: false,
+      });
+      flktmainDestinationDetail.destroy();
+    }000
    window.addEventListener("resize",function(){
     let widthWindow = window.innerWidth
     if(widthWindow < 576){
@@ -787,6 +855,29 @@ function mainDestinationDetailSlider() {
 function mainFreshProducts(){
   let mainFreshProducts = document.querySelector(".main__freshproduct .reading .reading__main .reading__main-post");
   if (document.contains(mainFreshProducts)=== true ) {
+    let widthWindow = window.innerWidth
+      if(widthWindow < 576 ){
+          var mainFreshProductsList = document.querySelector(
+      ".main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap"    );
+        var flktmainFreshProducts = new Flickity(
+          mainFreshProductsList,
+          {
+            // options
+            cellAlign: "left",
+            contain: true,
+            draggable: ">1",
+            wrapAround: true,
+            pageDots: false,
+            prevNextButtons: false,
+          }
+        );
+      } else{
+        var mainFreshProductsList = document.querySelector(  ".main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap"    );
+            var flktmainFreshProducts = new Flickity(
+              mainFreshProductsList,  { }
+            );
+            flktmainFreshProducts.destroy();
+      }
     window.addEventListener('resize',function(){
       let widthWindow = window.innerWidth
       if(widthWindow < 576 ){
@@ -870,6 +961,7 @@ mainDestinationDetailSlider();
 mainHomeEventSlider();
 mainEventDetaiPost();
 mainFreshProducts();
+loading();
 });
 // function handleLoading() {
 //   const loading = document.querySelector('.loading ');
@@ -911,6 +1003,5 @@ function loading() {
     loadingPage.classList.add("active");
   });
 }
-loading();
-//Paroller JS-------------------------------------------------------//
+
 

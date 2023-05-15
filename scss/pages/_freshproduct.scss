@@ -1,40 +1,4 @@
 .main__freshproduct {
-  .hero {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    margin-top: var(--header-height);
-    max-height: 500px;
-    background: url(../img/freshproduct-banner.jpg) no-repeat;
-    background-position: center;
-    background-size: cover;
-    .container {
-      height: 100%;
-    }
-    @media screen and (max-width: 1024px) {
-      height: 50vh;
-    }
-    @include xs {
-      .textbox__archon {
-        flex-direction: column;
-        justify-content: center;
-        &-heading {
-          padding-left: 0;
-        }
-        &-click {
-          padding-right: 0;
-          margin-top: 30px;
-          & .prevHome {
-          }
-          & .nextService {
-          }
-        }
-      }
-    }
-    @include xxs {
-      --header-height: 60px;
-    }
-  }
   .reading {
     .textbox__infoinside {
       &-heading {
@@ -60,14 +24,10 @@
       }
       .seenmore {
         &.mgB {
-          margin-bottom: 80px;
+          margin-bottom: 70px;
         }
         &__item {
           align-items: unset;
-
-          &-img {
-            height: 76px;
-          }
           &:last-child {
             justify-content: flex-start;
           }
@@ -102,8 +62,8 @@
     @include md {
       &__main {
         &-form {
-          .img {
-            display: none;
+          .form__reserve {
+            padding: 66px 30px;
           }
         }
       }
@@ -115,6 +75,18 @@
     }
     @include xs {
       &__main {
+        .seenmore {
+          flex-direction: row;
+        }
+        &-form {
+          .img {
+            img {
+              &:last-child {
+                display: none;
+              }
+            }
+          }
+        }
         &-img-one {
           &.mg {
             margin-bottom: var(--pd-section);
@@ -130,7 +102,6 @@
             margin-top: var(--pd-section);
           }
           .flexauto {
-            --item: 2;
             &__wrap {
               &-item {
                 margin-right: unset;
@@ -147,9 +118,32 @@
         --fz-h5: 1.5rem;
       }
       &__main {
+        &-post {
+          .flexauto {
+            &__wrap {
+              &-item {
+                width: calc(100% - 30px);
+              }
+            }
+          }
+        }
+        &-form {
+          .form__reserve {
+            padding: 30px 25px;
+          }
+        }
         .seenmore {
-          flex-wrap: wrap;
+          --fz-h6: 1.6rem;
+          --fz-h5: 2rem;
           &__item {
+            &-text {
+              .heading {
+                line-height: 3.2rem;
+              }
+            }
+            &-img {
+              display: none;
+            }
           }
         }
       }

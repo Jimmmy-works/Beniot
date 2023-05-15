@@ -35,77 +35,56 @@
     <!-- Youtube -->
     <!-- <iframe src="" frameborder="0"></iframe> .-->
     <!-- <link rel="stylesheet" href="./dest/stylelibs.min.css" /> -->
+    <link rel="stylesheet" href="./dest/style.min.css" />
+    <link rel="stylesheet" href="./dest/fonts.css" />
     <style>
         .loading {
             position: fixed;
             top: 0;
             left: 0;
-            bottom: 0;
-            right: 0;
+            width: 100vw;
             height: 100vh;
-            width: 100%;
-            z-index: 10000;
-            background-color: var(--cl-black-h2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999999;
+            background: #0e1317;
             opacity: 1;
-            visibility: visible;
-            transition: 0.4s;
+            pointer-events: auto;
         }
 
-        .loading.active {
-            transition: 0.4s;
-            opacity: 0;
-            visibility: hidden;
+        .loader {
+            flex-direction: column;
+            opacity: 1;
+            pointer-events: auto;
         }
 
-        .ring {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 150px;
-            height: 150px;
-            background: transparent;
-            border: 3px solid #3c3c3c;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 150px;
-            font-family: sans-serif;
-            font-size: 20px;
-            /* color: #fff000; */
-            color: #fff000;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            /* text-shadow: 0 0 10px #fff000; */
-            text-shadow: 0 0 10px #fff000;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        .loader__progress {
+            width: 240px;
+            height: 2px;
+            position: relative;
+            margin: 30px 0 26px 0;
+            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        .ring:before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            width: 100%;
+        .loader__progress span {
+            width: 0%;
             height: 100%;
-            border: 3px solid transparent;
-            border-top: 3px solid #fff000;
-            border-right: 3px solid #fff000;
-            border-radius: 50%;
-            animation: animate 2s linear infinite;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            background: var(--cl-primary);
         }
 
-        @keyframes animate {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+        .loader__number {
+            text-align: center;
+            font-size: 15px;
+            line-height: 28px;
+            font-weight: 700;
         }
     </style>
-    <link rel="stylesheet" href="./dest/style.min.css" />
-    <link rel="stylesheet" href="./dest/fonts.css" />
 </head>
 
 <body>
@@ -157,7 +136,7 @@
         </div>
     </nav>
     <header class="header">
-        <div class="container">
+        <div class="container-fluid">
             <div class="btn__hamberger not-active">
                 <span></span>
                 <span></span>
@@ -220,7 +199,7 @@
         </div>
     </header>
     <main class="main__menu-eu">
-        <section class="hero myparoller">
+        <section style="background: url(../img/lib-recipe-4.jpg) no-repeat;" class="hero heropage myparoller">
             <div class="container">
                 <div class="textbox__archon">
                     <h3 class="textbox__archon-heading">EUROPE FOOD</h3>

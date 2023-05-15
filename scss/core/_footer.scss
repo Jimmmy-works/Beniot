@@ -1,181 +1,192 @@
 .footer {
-    background-color: var(--cl-black-h1);
-    display: flex;
-    flex-direction: column;
-    &__top {
-        .container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: unset;
-            margin-bottom: unset;
-        }
-        &-connect {
-            @include mid(false);
-            .logo {
-                width: 100%;
-                @include mid;
-            }
-            .heading {
-                width: 100%;
-                max-width: 391px;
-                @include text(ci, var(--fz-h3), var(--lh-h3), var(--cl-white), none, none);
-                text-align: center;
-                padding-top: 34.5px;
-            }
-            .social {
-                @include mid;
-                padding-top: 31px;
-                .tw,
-                .fb,
-                .linkend,
-                .ins,
-                .youtube {
-                    display: block;
-                    padding: 0 24px;
-                    svg {
-                        transform: scale(1);
-                        @include transition;
-                        path {
-                            @include transition;
-                        }
-                    }
-                    &:hover {
-                        svg {
-                            transform: scale(1.08);
-                            path {
-                                fill: var(--cl-primary);
-                            }
-                        }
-                    }
-                }
-                .linkend,
-                .tw,
-                .youtube {
-                    padding: unset;
-                }
-            }
-        }
-        &-contact {
-            .heading {
-                padding-bottom: 24px;
-                @include text(ol, var(--fz-h3), var(--lh-h3), var(--cl-white), none, none);
-            }
-            .location,
-            .phone,
-            .email {
-                display: block;
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                img {
-                    margin-right: 5px;
-                }
-                &__text {
-                    @include text(mr, var(--fz-h5), var(--lh-h5), var(--cl-white), none, none);
-                    position: relative;
-                    @include transition;
-                    &::before {
-                        content: '';
-                        width: 100%;
-                        height: 1px;
-                        position: absolute;
-                        bottom: 2px;
-                        left: 0;
-                        background-color: var(--cl-primary);
-                        opacity: 0;
-                        visibility: hidden;
-                        @include transition;
-                    }
-                    &:hover {
-                        color: var(--cl-primary);
-                        &::before {
-                            opacity: 1;
-                            visibility: visible;
-                        }
-                    }
-                }
-            }
-            .phone,
-            .email {
-                padding-top: 16px;
-            }
-        }
-        &-open {
-            text-align: right;
-            .heading {
-                padding-bottom: 24px;
-                @include text(ol, var(--fz-h3), var(--lh-h3), var(--cl-white), none, none);
-            }
-            .desc {
-                padding-bottom: 16px;
-                @include text(mr, var(--fz-h5), var(--lh-h5), var(--cl-white), none, none);
-                &:last-child {
-                    padding-bottom: unset;
-                }
-                span {
-                    @include text(mr, var(--fz-h5), var(--lh-h5), var(--cl-primary), none, none);
-                }
-            }
-        }
+  background-color: var(--cl-black-h1);
+  display: flex;
+  flex-direction: column;
+  &__top {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: unset;
+      margin-bottom: unset;
     }
+    &-connect {
+      @include mid(false);
+      .logo {
+        width: 100%;
+        @include mid;
+      }
+      .heading {
+        width: 100%;
+        max-width: 391px;
+        @include text(ci, var(--fz-h3), var(--lh-h3), var(--cl-white), none, none);
+        text-align: center;
+        padding-top: 34.5px;
+      }
+      .social {
+        @include mid;
+        padding-top: 31px;
+        .tw,
+        .fb,
+        .linkend,
+        .ins,
+        .youtube {
+          display: block;
+          padding: 0 24px;
+          svg {
+            transform: scale(1);
+            @include transition;
+            path {
+              @include transition;
+            }
+          }
+          &:hover {
+            svg {
+              transform: scale(1.08);
+              path {
+                fill: var(--cl-primary);
+              }
+            }
+          }
+        }
+        .linkend,
+        .tw,
+        .youtube {
+          padding: unset;
+        }
+      }
+    }
+    &-contact {
+      .heading {
+        padding-bottom: 24px;
+        @include text(ol, var(--fz-h3), var(--lh-h3), var(--cl-white), none, none);
+      }
+      .location,
+      .phone,
+      .email {
+        display: block;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        img {
+          margin-right: 5px;
+        }
+        &__text {
+          @include text(mr, var(--fz-h5), var(--lh-h5), var(--cl-white), none, none);
+          position: relative;
+          @include transition;
+          &::before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            background-color: var(--cl-primary);
+            opacity: 0;
+            visibility: hidden;
+            @include transition;
+          }
+          &:hover {
+            color: var(--cl-primary);
+            &::before {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+      .phone,
+      .email {
+        padding-top: 16px;
+      }
+      .email {
+        img {
+          width: 40px;
+          object-fit: none;
+        }
+      }
+    }
+    &-open {
+      text-align: right;
+      .heading {
+        padding-bottom: 24px;
+        @include text(ol, var(--fz-h3), var(--lh-h3), var(--cl-white), none, none);
+      }
+      .desc {
+        padding-bottom: 16px;
+        @include text(mr, var(--fz-h5), var(--lh-h5), var(--cl-white), none, none);
+        &:last-child {
+          padding-bottom: unset;
+        }
+        span {
+          @include text(mr, var(--fz-h5), var(--lh-h5), var(--cl-primary), none, none);
+        }
+      }
+    }
+  }
 
+  &__end {
+    --pd-section: 25px;
+    background-color: var(--cl-body-bg);
+    &-text {
+      text-align: center;
+      @include text(mr, var(--fz-h5), 30px, var(--cl-white), none, none);
+    }
+  }
+  @include sm {
+    &__top {
+      .container {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      &-contact {
+        &-location,
+        &-phone,
+        &-email {
+        }
+      }
+      &-connect {
+        position: initial;
+        transform: unset;
+        margin: 35px 0;
+        .logo {
+          justify-content: flex-start;
+        }
+        .heading {
+          max-width: unset;
+          padding-top: 15px;
+          text-align: left;
+        }
+        .social {
+          justify-content: flex-start;
+          padding-top: 15px;
+          .ins,
+          .fb,
+          .tw,
+          .linkend {
+            padding: unset;
+            padding-right: 12px;
+          }
+        }
+      }
+      &-open {
+        text-align: left;
+      }
+    }
+  }
+  @include xs {
     &__end {
-        --pd-section: 25px;
-        background-color: var(--cl-body-bg);
-        &-text {
-            text-align: center;
-            @include text(mr, var(--fz-h5), 30px, var(--cl-white), none, none);
-        }
+      --fz-h5: 1.4rem;
     }
-    @include sm {
-        &__top {
-            .container {
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-            }
-            &-contact {
-                &-location,
-                &-phone,
-                &-email {
-                }
-            }
-            &-connect {
-                position: initial;
-                transform: unset;
-                margin: 35px 0;
-                .logo {
-                    justify-content: flex-start;
-                }
-                .heading {
-                    max-width: unset;
-                    padding-top: 15px;
-                    text-align: left;
-                }
-                .social {
-                    justify-content: flex-start;
-                    padding-top: 15px;
-                    .ins,
-                    .fb,
-                    .tw,
-                    .linkend {
-                        padding: unset;
-                        padding-right: 12px;
-                    }
-                }
-            }
-            &-open {
-                text-align: left;
-            }
-        }
+  }
+  @include xxs {
+    --fz-h3: 2rem;
+    --lh-h3: 3rem;
+    &__top {
+      &.pd {
+        padding-bottom: 25px;
+      }
     }
-    @include xs {
-        &__end {
-            --fz-h5: 1.4rem;
-        }
-    }
-    @include xxs {
-        --fz-h3: 2rem;
-        --lh-h3: 3rem;
-    }
+  }
 }

@@ -7,12 +7,12 @@
   z-index: 1100;
   background: var(--cl-primary);
 }
-
 .main__home {
+  margin-top: var(--header-height);
   //hero
   .hero {
     overflow: hidden;
-    height: 100vh;
+    height: calc(100vh - var(--header-height));
     position: relative;
     top: 0;
     left: 0;
@@ -107,17 +107,17 @@
       }
     }
     &__list {
-      height: 100vh;
+      height: calc(100vh - var(--header-height));
       width: 100%;
       .flickity-viewport {
         height: 100vh !important;
       }
       &-item {
-        height: 100vh;
+        height: calc(100vh - var(--header-height));
         width: 100%;
         @include transition;
         .img {
-          height: 100vh;
+          height: calc(100vh - var(--header-height));
           width: 100%;
           &:after {
             content: '';
@@ -131,14 +131,14 @@
             z-index: 5;
           }
           img {
-            height: 100vh;
+            height: calc(100vh - var(--header-height));
             width: 100%;
             object-fit: cover;
           }
         }
         .textbox__hero {
           position: absolute;
-          top: 50%;
+          top: 45%;
           left: 50%;
           @include transform(translate(-50%, -50%));
           z-index: 10;
@@ -231,7 +231,6 @@
         }
       }
     }
-
     @include xxs {
       --header-height: 60px;
       &__list {
@@ -251,8 +250,6 @@
             }
           }
           .textbox__hero {
-            height: 50vh;
-            top: 44%;
             .desc {
               padding-top: 10px;
               padding-bottom: 15px;
@@ -539,7 +536,6 @@
       }
     }
   }
-
   //video3d
   .video3d {
     width: 100%;
@@ -596,38 +592,14 @@
     }
     .flexauto {
       &__wrap {
-        &.is-selected {
-        }
         &-item {
           margin-right: 24px;
-
-          .img {
-          }
         }
       }
     }
-    @include xs {
-      .flexauto {
-        &__wrap {
-          &-item {
-            &::after {
-              content: '';
-              width: 100%;
-              height: 100%;
-              background: rgba(0, 0, 0, 0.7);
-              pointer-events: none;
-              position: absolute;
-              top: 0;
-              left: 0;
-              @include transition;
-            }
-            &.is-selected {
-              &::after {
-                background: transparent;
-              }
-            }
-          }
-        }
+    @include sm {
+      .container {
+        max-width: 100%;
       }
     }
   }
@@ -638,7 +610,6 @@
       height: 120px;
       width: 100%;
       --item: 4;
-
       &-item {
         height: 100%;
         width: calc((100% - (24px * (var(--item) - 1))) / var(--item));
@@ -651,17 +622,16 @@
     }
     @include sm {
       &__list {
-        --item: 2.55;
         &-item {
-          img {
-          }
+          width: calc((100% - 48px) / 3);
         }
       }
     }
     @include xs {
       &__list {
+        height: 100px;
         &-item {
-          width: 60%;
+          width: calc((100% - 48px) / 2);
         }
       }
     }
@@ -669,12 +639,11 @@
   // message
   .review {
     background: url(../img/review-bg.jpg) no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-color: var(--cl-black);
     background-position: right;
     background-attachment: scroll;
     width: 100%;
-    height: 100%;
     max-height: 650px;
     overflow: hidden;
     .container {
@@ -685,14 +654,9 @@
       height: 100%;
       width: 50%;
       .flickity-viewport {
-        height: 650px;
+        height: 650px !important;
         width: 100%;
       }
-      .flickity-slider {
-        height: 100%;
-        width: 100%;
-      }
-
       &-item {
         height: 100%;
         width: 100%;
@@ -708,7 +672,7 @@
         .textbox__left {
           position: absolute;
           top: 103px;
-          left: 2px;
+          left: 0;
           .linemain {
             margin-top: 15px;
             margin-bottom: 35px;
@@ -721,15 +685,15 @@
           }
           .desc {
             max-width: 486px;
-            @include text(ci, var(--fz-h3), 40px, var(--cl-white), none, none);
+            @include text(ci, var(--fz-h3), var(--lh-h3), var(--cl-white), none, none);
           }
           .message {
-            @include text(ol, var(--fz-h3), 40px, var(--cl-white), none, none);
+            @include text(ol, var(--fz-h3), var(--lh-h3), var(--cl-white), none, none);
             padding-bottom: unset;
             padding-top: 25px;
           }
           .name {
-            @include text(mr, var(--fz-h6), 30px, var(--cl-primary), none, none);
+            @include text(mr, var(--fz-h6), var(--lh-h6), var(--cl-primary), none, none);
           }
         }
       }
@@ -739,6 +703,7 @@
       align-items: center;
       position: absolute;
       bottom: 86px;
+      left: 15px;
       z-index: 2;
       width: 100%;
       max-width: 74px;
@@ -786,21 +751,51 @@
         }
       }
     }
-    @media (min-width: 1900px) {
+    @include minW(1920px) {
       background-position: 66% 0;
     }
+    @include sm {
+      .container {
+        max-width: 100%;
+      }
+    }
     @include xs {
+      .container {
+        &::before {
+          content: '';
+          @include mid(false);
+          height: 100%;
+          width: 100%;
+          background-color: rgba($color: #000000, $alpha: 0.4);
+        }
+      }
+      &__control {
+        bottom: 10px;
+      }
       &__list {
         width: 100%;
+        .flickity-viewport {
+          height: 500px !important;
+        }
+
+        &-item {
+          .textbox__left {
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 20px 0;
+            .desc {
+              max-width: 100%;
+            }
+          }
+        }
       }
     }
     @include xxs {
       background-color: rgba($color: #000000, $alpha: 0.1);
-      height: 450px;
+      --fz-h3: 2rem;
       &__list {
-        height: 450px;
         .flickity-viewport {
-          height: 450px;
+          height: 400px !important;
         }
         &-item {
           position: relative;
@@ -808,33 +803,23 @@
             display: none;
           }
           .textbox__left {
-            padding: 0 20px;
             width: 100%;
-            height: 100%;
             @include mid(false);
-            top: 55%;
+            top: 47%;
+            z-index: 2;
+            position: relative;
+            .message {
+              padding-top: 10px;
+            }
             .linemain {
               margin-top: 10px;
               margin-bottom: 10px;
-            }
-            .heading {
-              h3 {
-                padding: unset;
-                font-size: 24px;
-              }
-            }
-            .desc {
-              font-size: 18px;
-            }
-            .linemain {
-              margin: unset;
             }
           }
         }
       }
       &__control {
-        left: 35px;
-        bottom: 15px;
+        bottom: 0;
       }
     }
   }
@@ -937,28 +922,23 @@
       }
     }
     @include sm {
+      .container {
+        max-width: 100%;
+      }
       &__list {
         @include transition(unset);
         &-item {
-          --item: 2.6;
+          width: calc((100% - 55px) / 2);
           @include transition(unset);
           margin-right: 24px;
         }
       }
     }
-    @include xs {
-      &__list {
-        &-item {
-          --item: 2.2;
-        }
-      }
-    }
     @include xxs {
       --fz-h3: 2rem;
-
       &__list {
         &-item {
-          width: 80%;
+          width: calc(100% - 30px);
           .img {
             &::after {
               content: '';
@@ -1052,26 +1032,19 @@
         }
       }
     }
-    @media screen and (max-width: 768px) {
+    @include xs {
       --fz-h2: 3.2rem;
       --lh-90: 4rem;
       --fz-h5: 1.4rem;
       --fz-90: 6rem;
       --lh-90: 6rem;
+    }
+
+    @include xxs {
       &__form {
-        .form__reserve {
-          padding: 66px 60px;
-        }
         &-img,
         &-linevertical {
           display: none;
-        }
-      }
-    }
-    @include xxs {
-      &__form {
-        .form__reserve {
-          padding: 40px 32px;
         }
       }
     }
@@ -1113,36 +1086,11 @@
     // @include maxW()
 
     @include sm {
+      .container {
+        max-width: 100%;
+      }
       &__circle {
         display: none;
-      }
-    }
-    @include xs {
-      .flexauto {
-        &__wrap {
-          &-item {
-            &::after {
-              content: '';
-              width: 100%;
-              height: 100%;
-              background: rgba(0, 0, 0, 0.7);
-              pointer-events: none;
-              position: absolute;
-              top: 0;
-              left: 0;
-              @include transition;
-            }
-            &.is-selected {
-              &::after {
-                background: transparent;
-              }
-            }
-          }
-          &-item {
-            .img {
-            }
-          }
-        }
       }
     }
     @include xxs {
