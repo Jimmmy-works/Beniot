@@ -996,7 +996,7 @@ function loading() {
   imgLoad.on("progress", function (instance, image) {
     count++;
     let percentCount = Math.floor((count / allImgs) * 100);
-    progressNumber.innerHTML = `${percentCount}%`;
+    progressNumber.innerHTML = `${percentCount} `;
     progressBar.style.width = `${percentCount}%`;
   });
   imgLoad.on("done", function () {

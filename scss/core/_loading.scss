@@ -57,10 +57,8 @@
   }
   &__number {
     text-align: center;
-    font-size: 15px;
-    line-height: 28px;
     font-weight: 700;
-    @include text(mr, 20px, auto, var(--cl-primary), none, none);
+    @include text(mr, 18px, 28px, var(--cl-primary), none, none);
     @include transition;
   }
   @include xs {
