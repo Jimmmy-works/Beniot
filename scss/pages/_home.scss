@@ -639,7 +639,7 @@
   // message
   .review {
     background: url(../img/review-bg.jpg) no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-color: var(--cl-black);
     background-position: right;
     background-attachment: scroll;

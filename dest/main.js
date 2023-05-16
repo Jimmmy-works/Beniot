@@ -932,8 +932,8 @@ window.addEventListener("load", function () {
 // $(".paroller-hero").paroller();
 // $('.jumbotron').paroller();
 $(".myparoller").paroller({
-  factorXs: 0.2,
   factor: 0.5,
+  factorXs:0.3,
 });
 submenu();
 submenunav();

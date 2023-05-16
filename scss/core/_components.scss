@@ -1547,14 +1547,12 @@
   width: 100%;
   position: relative;
   margin-top: var(--header-height);
+  background-size: calc(100% + 51px) calc(100% + 51px) !important;
   .container {
     height: 100%;
   }
   @include minW(1920px) {
     height: 700px;
-  }
-  @include minW(1440px) {
-    background-size: cover !important;
   }
   @include xs {
     .textbox__archon {
@@ -1563,7 +1561,6 @@
     }
   }
   @include xxs {
-    background-size: cover !important;
     height: 50vh;
     --header-height: 60px;
   }
