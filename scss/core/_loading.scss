@@ -59,11 +59,12 @@
     text-align: center;
     font-weight: 700;
     @include text(mr, 18px, 28px, var(--cl-primary), none, none);
-    @include transition;
+    span {
+      margin-right: 2px;
+    }
   }
   @include xs {
     top: 45%;
-
     &__progress {
       width: 200px;
       margin: 25px 0 22px 0;
