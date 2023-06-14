@@ -1071,11 +1071,6 @@
     position: relative;
     appearance: none;
     @include transition;
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-    }
-
     .underline {
       position: absolute;
       height: 0.5px;
@@ -1084,20 +1079,34 @@
       background: #fff;
       @include transition;
     }
+    &.success {
+      .underline {
+        background: #00bfa6 !important;
+      }
+    }
+    &.error {
+      .underline {
+        background: #e74c3c !important;
+      }
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
     input {
       z-index: 3;
       width: 100%;
       height: 100%;
       @include transition;
+
       &:focus,
       &:valid {
+        ~ .underline {
+          background: var(--cl-primary);
+        }
         ~ label {
           transform: translateY(-15px);
-        }
-        ~ .underline {
-          &::before {
-            transform: scaleX(1);
-          }
         }
       }
     }
@@ -1149,6 +1158,7 @@
     }
     input[type='date']::-webkit-calendar-picker-indicator {
       cursor: pointer;
+      flex: 1;
       background: no-repeat url(../img/calendar.svg);
       background-position: center right;
       appearance: none;
@@ -1183,6 +1193,7 @@
     }
 
     input[type='time']::-webkit-calendar-picker-indicator {
+      flex: 2;
       cursor: pointer;
       background: no-repeat url(../img/dropdown.svg);
       background-position: center right;

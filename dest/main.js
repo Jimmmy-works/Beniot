@@ -228,29 +228,30 @@ function handleModalVideo() {
 function handleSlider() {
   const hero = document.querySelector('.main__home .hero');
   if (document.contains(hero) === true) {
-    var sliderFlickity = document.querySelector(' .hero .hero__list');
-    var flktySlider = new Flickity(sliderFlickity, {
-      // options
-      cellAlign: 'left',
-      contain: true,
-      // draggable: ">1",
-      prevNextButtons: false,
-      wrapAround: true,
-      pageDots: false,
-      pauseAutoPlayOnHover: false,
-      fade: true,
-    });
+    setTimeout(() => {
+      var sliderFlickity = document.querySelector('.hero .hero__list');
+      var flktySlider = new Flickity(sliderFlickity, {
+        // options
+        cellAlign: 'left',
+        contain: true,
+        // draggable: ">1",
+        prevNextButtons: false,
+        wrapAround: true,
+        pageDots: false,
+        pauseAutoPlayOnHover: false,
+        fade: true,
+      });
+      // // Btn control
 
-    // // Btn control
-
-    let btnPrev = document.querySelector('.hero .hero__control .hero__control-left ');
-    let btnNext = document.querySelector('.hero .hero__control .hero__control-right');
-    btnPrev.addEventListener('click', function () {
-      flktySlider.previous(true);
-    });
-    btnNext.addEventListener('click', function () {
-      flktySlider.next(true);
-    });
+      let btnPrev = document.querySelector('.hero .hero__control .hero__control-left ');
+      let btnNext = document.querySelector('.hero .hero__control .hero__control-right');
+      btnPrev.addEventListener('click', function () {
+        flktySlider.previous(true);
+      });
+      btnNext.addEventListener('click', function () {
+        flktySlider.next(true);
+      });
+    }, 800);
   }
 }
 //Handle Review ----------------------------------------------------//
@@ -666,7 +667,9 @@ function mainEventDetaiPost() {
   let widthWindow = window.innerWidth;
   if (document.contains(mainEventDetaiPost) === true) {
     if (widthWindow < 576) {
-      var mainEventDetaiPostList = document.querySelector('.main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+      var mainEventDetaiPostList = document.querySelector(
+        '.main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+      );
       var flktmainEventDetaiPost = new Flickity(mainEventDetaiPostList, {
         // options
         cellAlign: 'left',
@@ -679,14 +682,18 @@ function mainEventDetaiPost() {
         freeScroll: false,
       });
     } else {
-      var mainEventDetaiPostList = document.querySelector('.main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+      var mainEventDetaiPostList = document.querySelector(
+        '.main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+      );
       var flktmainEventDetaiPost = new Flickity(mainEventDetaiPostList, {});
       flktmainEventDetaiPost.destroy();
     }
     window.addEventListener('resize', function () {
       let widthWindow = window.innerWidth;
       if (widthWindow < 576) {
-        var mainEventDetaiPostList = document.querySelector('.main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+        var mainEventDetaiPostList = document.querySelector(
+          '.main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+        );
         var flktmainEventDetaiPost = new Flickity(mainEventDetaiPostList, {
           // options
           cellAlign: 'left',
@@ -699,7 +706,9 @@ function mainEventDetaiPost() {
           freeScroll: false,
         });
       } else {
-        var mainEventDetaiPostList = document.querySelector('.main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+        var mainEventDetaiPostList = document.querySelector(
+          '.main__event-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+        );
         var flktmainEventDetaiPost = new Flickity(mainEventDetaiPostList, {});
         flktmainEventDetaiPost.destroy();
       }
@@ -713,7 +722,9 @@ function mainDestinationDetailSlider() {
   if (document.contains(mainDestinationDetail) === true) {
     let widthWindow = window.innerWidth;
     if (widthWindow < 576) {
-      var mainDestinationDetailList = document.querySelector('.main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+      var mainDestinationDetailList = document.querySelector(
+        '.main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+      );
       var flktmainDestinationDetail = new Flickity(mainDestinationDetailList, {
         // options
         cellAlign: 'left',
@@ -724,7 +735,9 @@ function mainDestinationDetailSlider() {
         prevNextButtons: false,
       });
     } else {
-      var mainDestinationDetailList = document.querySelector('.main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+      var mainDestinationDetailList = document.querySelector(
+        '.main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+      );
       var flktmainDestinationDetail = new Flickity(mainDestinationDetailList, {
         // options
         cellAlign: 'left',
@@ -739,7 +752,9 @@ function mainDestinationDetailSlider() {
     window.addEventListener('resize', function () {
       let widthWindow = window.innerWidth;
       if (widthWindow < 576) {
-        var mainDestinationDetailList = document.querySelector('.main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+        var mainDestinationDetailList = document.querySelector(
+          '.main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+        );
         var flktmainDestinationDetail = new Flickity(mainDestinationDetailList, {
           // options
           cellAlign: 'left',
@@ -750,7 +765,9 @@ function mainDestinationDetailSlider() {
           prevNextButtons: false,
         });
       } else {
-        var mainDestinationDetailList = document.querySelector('.main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+        var mainDestinationDetailList = document.querySelector(
+          '.main__destination-detail .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+        );
         var flktmainDestinationDetail = new Flickity(mainDestinationDetailList, {
           // options
           cellAlign: 'left',
@@ -772,7 +789,9 @@ function mainFreshProducts() {
   if (document.contains(mainFreshProducts) === true) {
     let widthWindow = window.innerWidth;
     if (widthWindow < 576) {
-      var mainFreshProductsList = document.querySelector('.main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+      var mainFreshProductsList = document.querySelector(
+        '.main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+      );
       var flktmainFreshProducts = new Flickity(mainFreshProductsList, {
         // options
         cellAlign: 'left',
@@ -783,14 +802,18 @@ function mainFreshProducts() {
         prevNextButtons: false,
       });
     } else {
-      var mainFreshProductsList = document.querySelector('.main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+      var mainFreshProductsList = document.querySelector(
+        '.main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+      );
       var flktmainFreshProducts = new Flickity(mainFreshProductsList, {});
       flktmainFreshProducts.destroy();
     }
     window.addEventListener('resize', function () {
       let widthWindow = window.innerWidth;
       if (widthWindow < 576) {
-        var mainFreshProductsList = document.querySelector('.main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+        var mainFreshProductsList = document.querySelector(
+          '.main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+        );
         var flktmainFreshProducts = new Flickity(mainFreshProductsList, {
           // options
           cellAlign: 'left',
@@ -801,7 +824,9 @@ function mainFreshProducts() {
           prevNextButtons: false,
         });
       } else {
-        var mainFreshProductsList = document.querySelector('.main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap');
+        var mainFreshProductsList = document.querySelector(
+          '.main__freshproduct .reading .reading__main .reading__main-post .flexauto .flexauto__wrap',
+        );
         var flktmainFreshProducts = new Flickity(mainFreshProductsList, {});
         flktmainFreshProducts.destroy();
       }
@@ -826,7 +851,6 @@ function scrollHiddenNav() {
   });
 }
 // scrollHiddenNav();
-
 window.addEventListener('load', function () {
   // $(".paroller-hero").paroller();
   // $('.jumbotron').paroller();
@@ -862,6 +886,7 @@ window.addEventListener('load', function () {
   mainFreshProducts();
   loading();
 });
+// Form validation
 
 function loading() {
   let loadingPage = document.querySelector('.loading');
@@ -876,8 +901,6 @@ function loading() {
       let percentCount = Math.floor((count / allImgs) * 100);
       progressNumber.innerHTML = `${percentCount}`;
       progressBar.style.width = `${percentCount}%`;
-      console.log(progressNumber);
-      console.log(progressNumber.innerText);
     })
     .on('done', function (instance) {
       loadingPage.classList.add('active');
@@ -886,4 +909,67 @@ function loading() {
     .on('always', function (instance) {
       loadingPage.classList.add('active');
     });
+}
+const phoneEle = document.getElementById('phone');
+
+const btnRegister = document.getElementById('btn-register');
+const inputEles = document.querySelectorAll('.input-row');
+
+const btnBooking = document.querySelector('#booking');
+const formInput = document.querySelectorAll('.form__reserve-input');
+const inputText = document.querySelector('#username');
+const inputPhone = document.querySelector('#phone');
+
+btnBooking &&
+  btnBooking.addEventListener('click', function (e) {
+    e.preventDefault();
+    Array.from(formInput).map((ele) => ele.classList.remove('success', 'error'));
+    let isValid = checkValidate();
+    if (isValid) {
+      alert('Gửi đăng ký thành công');
+      inputText.value = '';
+      inputPhone.value = '';
+      Array.from(formInput).map((ele) => ele.classList.remove('success', 'error'));
+    }
+  });
+
+function checkValidate() {
+  let usernameValue = inputText.value;
+  let phoneValue = inputPhone.value;
+
+  let isCheck = true;
+
+  if (usernameValue == '') {
+    setError(inputText, 'Tên không được để trống');
+
+    isCheck = false;
+  } else {
+    setSuccess(inputText);
+  }
+
+  if (phoneValue == '') {
+    setError(inputPhone, 'Số điện thoại không được để trống');
+    isCheck = false;
+  } else if (!isPhone(phoneValue)) {
+    setError(inputPhone, 'Số điện thoại không đúng định dạng');
+    isCheck = false;
+  } else {
+    setSuccess(inputPhone);
+  }
+
+  return isCheck;
+}
+
+function setSuccess(ele) {
+  ele.parentNode.classList.add('success');
+}
+
+function setError(ele, message) {
+  let parentEle = ele.parentNode;
+  parentEle.classList.add('error');
+  alert(message);
+}
+
+function isPhone(number) {
+  return /(84|0[3|5|7|8|9])+([0-9]{8})\b/.test(number);
 }

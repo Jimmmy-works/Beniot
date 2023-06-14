@@ -191,7 +191,7 @@
   </header>
   <main class="main__home">
     
-    <section id="hero" class="hero  ">
+    <section id="hero"  class="hero  ">
       <div class="hero__control">
         <div class="hero__control-left">
           <svg width="21" height="13" viewBox="0 0 21 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,7 +209,7 @@
 
         </div>
       </div>
-      <div class="hero__list ">
+      <div class="hero__list " >
         <div class="hero__list-item">
           <div class="img">
             <img src="./img/hero-3.jpg" alt="" />
@@ -787,13 +787,13 @@
           </div>
           <form class="form__reserve" action="">
             <h4 class="heading">Make a Reserve</h4>
-            <div class="form__reserve-input">
-              <input type="text" required>
+            <div class="form__reserve-input"/>
+              <input  id="username" type="text"  autocomplete="off" required> 
               <span class="underline"></span>
-              <label>Họ tên*</label>
+              <label>Họ tên* </label>
             </div>
             <div class="form__reserve-input ">
-              <input type="number" required></input>
+              <input  id="phone" type="number" required/> 
               <span class="underline"></span>
               <label>Điện Thoại*</label>
             </div>
@@ -813,7 +813,7 @@
             <div class="form__reserve-time ">
               <input min="00:00" max="23:59" type="time" id="" name="" value="19:30">
             </div>
-            <button class="btn__reverse">ĐẶT BÀN</button>
+            <button id="booking" class="btn__reverse">ĐẶT BÀN</button>
           </form>
         </div>
         <div class="makereserve__text">
